@@ -5,9 +5,72 @@
     <description></description>
     <link>http://blog26.com/</link>
     <atom:link href="http://blog26.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Jul 2017 12:46:06 +0800</pubDate>
-    <lastBuildDate>Mon, 24 Jul 2017 12:46:06 +0800</lastBuildDate>
+    <pubDate>Mon, 24 Jul 2017 16:24:05 +0800</pubDate>
+    <lastBuildDate>Mon, 24 Jul 2017 16:24:05 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>使用securecrt 连接虚拟机内的 Ubuntu 系统</title>
+        <description>&lt;h1 id=&quot;securecrt--ubuntu-&quot;&gt;使用securecrt 连接虚拟机内的 Ubuntu 系统&lt;/h1&gt;
+&lt;p&gt;## 关于securecrt
+SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。
+## 配置
+1. 设置虚拟机的网络模式，NAT或桥接。
+2. 在Ubuntu上用&lt;code class=&quot;highlighter-rouge&quot;&gt;ifconfig&lt;/code&gt;命令查看IP地址信息。
+```
+[zhuangtingting@ ~]$ ifconfig
+enp0s3    Link encap:Ethernet  HWaddr 08:00:27:e9:50:03&lt;br /&gt;
+          inet addr:10.0.0.176  Bcast:10.0.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::378a:3320:64c7:7952/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:405 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:397 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:143029 (143.0 KB)  TX bytes:73878 (73.8 KB)&lt;/p&gt;
+
+&lt;p&gt;lo        Link encap:Local Loopback&lt;br /&gt;
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:157 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:157 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:15404 (15.4 KB)  TX bytes:15404 (15.4 KB)
+```
+这里我的IP地址是10.0.0.176&lt;/p&gt;
+
+&lt;h2 id=&quot;ssh&quot;&gt;安装SSH&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;在Ubuntu上使用&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh username@localhost&lt;/code&gt;命令检查是否已经安装SSH服务。&lt;/li&gt;
+  &lt;li&gt;若无，则安装SSH
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo apt-get install openssh-server
+&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;查看是否有进程在22端口上监听，即是否已启动：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+[zhuangtingting@ ~]$ netstat -nat | grep 22
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN 
+&lt;/code&gt;
+## SecureCRT连接Ubuntu&lt;/li&gt;
+  &lt;li&gt;打开SecureCRT软件，进行配置。ProtoCol模式选为SSH2，Port为22，HostName为192.168.172.168（就是我们Ubuntu的IP地址），UserName为我们Ubuntu的登录账户。&lt;/li&gt;
+  &lt;li&gt;点击“Connect”后，PassWord为我们Ubuntu的登录密码。&lt;/li&gt;
+  &lt;li&gt;现在就可以尝试输入linux命令检验成果。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.linuxidc.com/Linux/2015-05/117048.htm&quot;&gt;SecureCRT连接Ubuntu参考教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Mon, 24 Jul 2017 00:00:00 +0800</pubDate>
+        <link>http://blog26.com/2017/07/securecrt-learn/</link>
+        <guid isPermaLink="true">http://blog26.com/2017/07/securecrt-learn/</guid>
+        
+        <category>securecrt学习</category>
+        
+        
+      </item>
     
       <item>
         <title>Git学习总结</title>

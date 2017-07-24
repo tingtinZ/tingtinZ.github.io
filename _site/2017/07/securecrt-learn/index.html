@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>Git学习总结</title>
-  <meta name="description" content="Git学习总结">
+  <title>使用securecrt 连接虚拟机内的 Ubuntu 系统</title>
+  <meta name="description" content="使用securecrt 连接虚拟机内的 Ubuntu 系统## 关于securecrtSecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。## 配置1. 设置虚拟机的网络模式，NAT或桥接。2. 在Ubuntu上用ifconf...">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Git学习总结">
-  <meta name="twitter:description" content="Git学习总结">
+  <meta name="twitter:title" content="使用securecrt 连接虚拟机内的 Ubuntu 系统">
+  <meta name="twitter:description" content="使用securecrt 连接虚拟机内的 Ubuntu 系统## 关于securecrtSecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。## 配置1. 设置虚拟机的网络模式，NAT或桥接。2. 在Ubuntu上用ifconf...">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Git学习总结">
-  <meta property="og:description" content="Git学习总结">
+  <meta property="og:title" content="使用securecrt 连接虚拟机内的 Ubuntu 系统">
+  <meta property="og:description" content="使用securecrt 连接虚拟机内的 Ubuntu 系统## 关于securecrtSecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。## 配置1. 设置虚拟机的网络模式，NAT或桥接。2. 在Ubuntu上用ifconf...">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://blog26.com/2017/07/git-learn/">
+  <link rel="canonical" href="http://blog26.com/2017/07/securecrt-learn/">
   <link rel="alternate" type="application/rss+xml" title="婷婷的博客" href="http://blog26.com/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -157,10 +157,10 @@
         <div class="content-wrapper__inner">
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">Git学习总结</h1>
+    <h1 class="post-title">使用securecrt 连接虚拟机内的 Ubuntu 系统</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2017-07-20 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2017-07-20</time>  
+      <time datetime="2017-07-24 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2017-07-24</time>  
          
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -168,166 +168,56 @@
   </header>
 
   <section class="post">
-    <h1 id="git">Git学习总结</h1>
+    <h1 id="securecrt--ubuntu-">使用securecrt 连接虚拟机内的 Ubuntu 系统</h1>
+<p>## 关于securecrt
+SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。
+## 配置
+1. 设置虚拟机的网络模式，NAT或桥接。
+2. 在Ubuntu上用<code class="highlighter-rouge">ifconfig</code>命令查看IP地址信息。
+```
+[zhuangtingting@ ~]$ ifconfig
+enp0s3    Link encap:Ethernet  HWaddr 08:00:27:e9:50:03<br />
+          inet addr:10.0.0.176  Bcast:10.0.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::378a:3320:64c7:7952/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:405 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:397 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:143029 (143.0 KB)  TX bytes:73878 (73.8 KB)</p>
 
-<h2 id="git-1">初始GIT</h2>
+<p>lo        Link encap:Local Loopback<br />
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:157 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:157 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:15404 (15.4 KB)  TX bytes:15404 (15.4 KB)
+```
+这里我的IP地址是10.0.0.176</p>
 
-<p>​	Git是一款开源的分布式版本控制系统，是用于Linux内核开发的版本控制工具。究其历史，起是Linus开发Git是为了作为一种过渡方案来代替BitKeeper，但发展到今日，Git分布式的优越性让越来越多人使用，如今在LInux、Unix、Mac和Windows这几大平台上都能够运行。</p>
-
-<h2 id="git-2">Git常用命令</h2>
-
-<p><code class="highlighter-rouge">git</code> 查看git是否安装</p>
-
-<p><code class="highlighter-rouge">sudo apt-get install git</code> 安装git</p>
-
-<p><code class="highlighter-rouge">git config</code> 设置名字和email地址</p>
-
-<p><code class="highlighter-rouge">git init</code> 初始化仓库</p>
-
-<p><code class="highlighter-rouge">git add</code> 添加文件到仓库</p>
-
-<p><code class="highlighter-rouge">git commit</code> 把文件提交到仓库</p>
-
-<p><code class="highlighter-rouge">git status</code> 查看仓库状态</p>
-
-<p><code class="highlighter-rouge">git diff</code> 查看文件的修改</p>
-
-<p><code class="highlighter-rouge">git log</code> 查看提交日志</p>
-
-<p><code class="highlighter-rouge">git reset</code> 版本回退（<code class="highlighter-rouge">HEAD</code> 表示当前版本，<code class="highlighter-rouge">HEAD^</code> 表示上一个版本，<code class="highlighter-rouge">HEAD^^</code> 表示上上个版本，用<code class="highlighter-rouge">commit id</code> 可以指定回到某个版本，当使用<code class="highlighter-rouge">git reset HEAD file</code>可以把暂存区的修改回退到工作区）</p>
-
-<p><code class="highlighter-rouge">git relog</code> 查看命令历史，每个版本的<code class="highlighter-rouge">commit id</code></p>
-
-<p><code class="highlighter-rouge">git checkout -- file</code> 丢弃工作区的修改（没有<code class="highlighter-rouge">--</code>，就变成了“切换到另一个分支”的命令）</p>
-
-<p><code class="highlighter-rouge">git rm</code> 删除（注意接着还要<code class="highlighter-rouge">git commit</code>)</p>
-
-<h2 id="master">工作区、暂存区、master分支</h2>
-
-<p>​	工作区有一个隐藏目录<code class="highlighter-rouge">.git</code>是Git的版本库。版本库里有一个称为stage或index 的暂存区。在创建时版本库时，Git自动为我们创建了唯一一个<code class="highlighter-rouge">master</code>分支。</p>
-
-<p>​	建立版本库并提交文件的状态可描绘为：</p>
-
-<p>​	工作区存在需要提交到版本库的文件时，用<code class="highlighter-rouge">git add</code>命令添加文件时实际上将文件修改添加到暂存区。接着用<code class="highlighter-rouge">git commit</code>提交更改时实际上是把暂存区的所有内容提交到<code class="highlighter-rouge">master</code>分支。</p>
-
-<p>​	如果不添加到暂存区，那么所做的修改是无法单单通过<code class="highlighter-rouge">git commit</code>提交到仓库的。</p>
-
-<h2 id="github">GitHub</h2>
-
- 	GitHub是一个提供Git仓库托管服务的网站，在上面可以免费获得Git远程仓库。
-
-<p>​	由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以在使用前需要创建SSH Key。</p>
-
-<p>​	在GitHub上，可以创建一个GitHub仓库，再把一个本地仓库与之关联，就可以把本地仓库的内容推送到Git仓库中。实现方法：在本地仓库下运行命令：</p>
-
-<p><code class="highlighter-rouge">
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git remote add origin git@github.com:tingtingZ/learngit.git
-</code></p>
-
-<p>​	其中，“tingtingZ“是GitHub账户名。</p>
-
-<p>​	接下来，使用<code class="highlighter-rouge">git push</code>命令，把当前分支<code class="highlighter-rouge">master</code>推送到远程。</p>
-
-<p><code class="highlighter-rouge">
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-Username for 'https://github.com': tingtinZ
-Password for 'https://tingtinZ@github.com': 
-Counting objects: 9, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 779 bytes | 0 bytes/s, done.
-Total 9 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/tingtinZ/learngit.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.
-</code></p>
-
-<p>​	使用命令<code class="highlighter-rouge">git push -u origin master</code>第一次推送master分支的所有内容。</p>
-
-<p>​	此后，每次本地提交后，只要有必要，就可以使用命令<code class="highlighter-rouge">git push origin master</code>推送最新修改。</p>
-
-<h2 id="section">学习中出现的问题及解决</h2>
-
+<h2 id="ssh">安装SSH</h2>
 <ol>
-  <li>
-    <p>问题1：使用<code class="highlighter-rouge">git commit</code> 命令将文件提交到仓库时出现“Please tell me who you are”的提示。</p>
-
-    <p>```
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git commit -m “wrote a readme file”</p>
-
-    <p>*** Please tell me who you are.</p>
-
-    <p>Run</p>
-
-    <p>git config –global user.email “you@example.com”
-  git config –global user.name “Your Name”</p>
-
-    <p>to set your account’s default identity.
-Omit –global to set the identity only in this repository.</p>
-
-    <p>fatal: unable to auto-detect email address (got ‘zhuangtingting@zhuangtingting-VirtualBox.(none)’)
-```</p>
-
-    <p>解决：Git是分布式版本控制系统，必须要通过设置名字和email地址。这里因为安装后没有进行这一个步骤，所以出现该提示。用<code class="highlighter-rouge">git config</code>命令设置之后，<code class="highlighter-rouge">git commit</code> 正常运行。</p>
-
-    <p><code class="highlighter-rouge">
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git config user.email "634545656@qq.com"
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git config user.name "zhuangtingting"
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git commit -m "wrote a readme file"
-[master (root-commit) 11cbb73] wrote a readme file
- 1 file changed, 2 insertions(+)
- create mode 100644 readme.txt
-</code></p>
-  </li>
-  <li>
-    <p>问题2：在使用git push<code class="highlighter-rouge">命令把当前分支</code>master`推送到远程时，出现” Repository not found.”的错误提示，显示仓库没有找到。</p>
-
-    <p>```
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-The authenticity of host ‘github.com (192.30.255.112)’ can’t be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added ‘github.com,192.30.255.112’ (RSA) to the list of known hosts.
-ERROR: Repository not found.
-fatal: Could not read from remote repository.</p>
-
-    <p>Please make sure you have the correct access rights
-and the repository exists.
-```</p>
-
-    <p>解决：使用<code class="highlighter-rouge">ssh git@github.com</code> 命令测试是否能连接到GitHub时：</p>
-
-    <p><code class="highlighter-rouge">
-root@zhuangtingting-VirtualBox:/home/zhuangtingting/learngit# ssh git@github.comThe authenticity of host 'github.com (192.30.255.113)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.255.113' (RSA) to the list of known hosts.
-PTY allocation request failed on channel 0
-Hi tingtinZ! You've successfully authenticated, but GitHub does not provide shell access.
-Connection to github.com closed.
-</code></p>
-
-    <p>结果属于正常回显，证明可以正常连接到GitHub。</p>
-
-    <p>删除原先设置的远程仓库origin，再重新添加远程仓库后，不再出现此错误，成功运行。</p>
-
-    <p><code class="highlighter-rouge">
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-Username for 'https://github.com': tingtinZ
-Password for 'https://tingtinZ@github.com': 
-Counting objects: 9, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 779 bytes | 0 bytes/s, done.
-Total 9 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/tingtinZ/learngit.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.
-</code></p>
-
-    <p>​</p>
-  </li>
+  <li>在Ubuntu上使用<code class="highlighter-rouge">ssh username@localhost</code>命令检查是否已经安装SSH服务。</li>
+  <li>若无，则安装SSH
+<code class="highlighter-rouge">
+$ sudo apt-get install openssh-server
+</code></li>
+  <li>查看是否有进程在22端口上监听，即是否已启动：
+<code class="highlighter-rouge">
+[zhuangtingting@ ~]$ netstat -nat | grep 22
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN 
+</code>
+## SecureCRT连接Ubuntu</li>
+  <li>打开SecureCRT软件，进行配置。ProtoCol模式选为SSH2，Port为22，HostName为192.168.172.168（就是我们Ubuntu的IP地址），UserName为我们Ubuntu的登录账户。</li>
+  <li>点击“Connect”后，PassWord为我们Ubuntu的登录密码。</li>
+  <li>现在就可以尝试输入linux命令检验成果。</li>
 </ol>
+
+<blockquote>
+  <p><a href="http://www.linuxidc.com/Linux/2015-05/117048.htm">SecureCRT连接Ubuntu参考教程</a></p>
+</blockquote>
 
 
   </section>
@@ -397,15 +287,10 @@ Branch master set up to track remote branch master from origin.
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2017/07/markdown-learn/" data-toggle="tooltip" data-placement="top" title="Markdown学习总结">上一篇：  <span>Markdown学习总结</span>
+            <a href="/2017/07/git-learn/" data-toggle="tooltip" data-placement="top" title="Git学习总结">上一篇：  <span>Git学习总结</span>
             </a>
         </li>
         
-        
-        <li class="next">
-            <a href="/2017/07/securecrt-learn/" data-toggle="tooltip" data-placement="top" title="使用securecrt 连接虚拟机内的 Ubuntu 系统">下一篇：  <span>使用securecrt 连接虚拟机内的 Ubuntu 系统</span>
-            </a>
-        </li>
         
     </ul>
 <br><br>

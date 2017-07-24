@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <meta name="keywords" content="时间轴, 婷婷的博客, ">
-  <title>时间轴 - 婷婷的博客</title>
-  <link rel="canonical" href="https://tingtinZ.github.io/page/timing">
+  <meta name="keywords" content="使用securecrt连接虚拟机内的 Ubuntu 系统, 婷婷的博客, ">
+  <title>使用securecrt连接虚拟机内的 Ubuntu 系统 - 婷婷的博客</title>
+  <link rel="canonical" href="https://tingtinZ.github.io/2017/07/24/securecrt-earn.html">
   <link rel="icon" href="/res/img/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/res/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/res/css/public.css">
@@ -68,46 +68,122 @@
 </div>
 
     <div class="main">
-    <link rel="stylesheet" href="/res/css/page.css">
-<div>
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2017/07/24/securecrt-earn.html">使用securecrt连接虚拟机内的 Ubuntu 系统</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+    2017年07月24日
+    <i class="space"></i>
+    
+    <i class="fa fa-tags"></i>
+    <a class="post-category" href="/page/category.html#securecrt">securecrt</a>
+    
+    
+    <a class="post-category" href="/page/category.html#"></a>
+    
+  </p>
+</header>
+<div class="post-main">
+<h1 id="使用securecrt-连接虚拟机内的-ubuntu-系统">使用securecrt 连接虚拟机内的 Ubuntu 系统</h1>
+<h2 id="关于securecrt">关于securecrt</h2>
+<p>SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。</p>
+<h2 id="配置">配置</h2>
+<ol>
+  <li>设置虚拟机的网络模式，NAT或桥接。</li>
+  <li>在Ubuntu上用<code class="highlighter-rouge">ifconfig</code>命令查看IP地址信息。
+```
+[zhuangtingting@ ~]$ ifconfig
+enp0s3    Link encap:Ethernet  HWaddr 08:00:27:e9:50:03<br />
+       inet addr:10.0.0.176  Bcast:10.0.0.255  Mask:255.255.255.0
+       inet6 addr: fe80::378a:3320:64c7:7952/64 Scope:Link
+       UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+       RX packets:405 errors:0 dropped:0 overruns:0 frame:0
+       TX packets:397 errors:0 dropped:0 overruns:0 carrier:0
+       collisions:0 txqueuelen:1000 
+       RX bytes:143029 (143.0 KB)  TX bytes:73878 (73.8 KB)</li>
+</ol>
 
+<p>lo        Link encap:Local Loopback<br />
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:157 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:157 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:15404 (15.4 KB)  TX bytes:15404 (15.4 KB)</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>这里我的IP地址是10.0.0.176
 
-<h1 class="year">2017</h1>
-<div class="timing">
-  <time class="time">07-24</time>
-  <div class="link"><a href="/2017/07/24/securecrt-earn.html">使用securecrt连接虚拟机内的 Ubuntu 系统</a></div>
-  <div class="point-time "></div>
+## 安装SSH
+1. 在Ubuntu上使用`ssh username@localhost`命令检查是否已经安装SSH服务。
+2. 若无，则安装SSH
+</code></pre>
 </div>
-
-
-
-<div class="timing">
-  <time class="time">07-20</time>
-  <div class="link"><a href="/2017/07/20/git-learn.html">Git学习</a></div>
-  <div class="point-time "></div>
+<p>$ sudo apt-get install openssh-server</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>3. 查看是否有进程在22端口上监听，即是否已启动：
+</code></pre>
 </div>
+<p>[zhuangtingting@ ~]$ netstat -nat | grep 22
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN   <br />
+tcp6       0      0 :::22                   :::*                    LISTEN
+```</p>
+<h2 id="securecrt连接ubuntu">SecureCRT连接Ubuntu</h2>
+<ol>
+  <li>打开SecureCRT软件，进行配置。ProtoCol模式选为SSH2，Port为22，HostName为192.168.172.168（就是我们Ubuntu的IP地址），UserName为我们Ubuntu的登录账户。</li>
+  <li>点击“Connect”后，PassWord为我们Ubuntu的登录密码。</li>
+  <li>现在就可以尝试输入linux命令检验成果。
+    <h2 id="遇到的问题">遇到的问题</h2>
+    <p>如此配置之后，发现在宿主机上浏览器访问不了页面了。</p>
+    <blockquote>
+      <p><a href="http://www.linuxidc.com/Linux/2015-05/117048.htm">SecureCRT连接Ubuntu参考教程</a></p>
+    </blockquote>
+  </li>
+</ol>
 
-
-
-<div class="timing">
-  <time class="time">07-19</time>
-  <div class="link"><a href="/2017/07/19/markdown-learn.html">Markdown学习</a></div>
-  <div class="point-time "></div>
 </div>
+<div class="share">
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+  </div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/res/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+<div class="pagination">
+
+<a class="pagination-item newer" href="/2017/07/20/git-learn.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Git学习</a>
+
+
+<span class="pagination-item older">下一篇&nbsp;<i class="fa fa-chain-broken"></i></span>
 
 </div>
-<br/>
-<script>
-$(function() {
-  var tags_a = $(".point-time");
-  tags_a.each(function(){
-    var x = 5;
-    var y = 0;
-    var rand = parseInt(Math.random() * (x - y + 1) + y);
-    $(this).addClass("point"+rand);
-  });
-});
+<!-- 使用多说评论-->
+<style>#ds-reset .ds-avatar, #ds-reset .ds-avatar img{border-radius:50%;}</style>
+<script type="text/javascript">var duoshuoQuery = {short_name:"tingtinZ"};(function(){var ds = document.createElement('script');ds.type = 'text/javascript';ds.async = true;ds.src = '/res/js/embed.js';ds.charset = 'UTF-8';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>
+<div class="comments">
+  <div class="ds-thread" data-title="使用securecrt连接虚拟机内的 Ubuntu 系统" data-thread-key="/2017/07/24/securecrt earn" data-url="https://tingtinZ.github.io/2017/07/24/securecrt-earn.html"></div>
+</div> 
+
+<!-- 使用disqus评论
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+var disqus_config = function () {
+    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'zshmobi'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//zshmobi.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    <script id="dsq-count-scr" src="//zshmobi.disqus.com/count.js" async></script>
+  -->
+
     
     </div>
   </div>    

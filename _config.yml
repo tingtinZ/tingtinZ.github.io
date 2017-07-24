@@ -1,0 +1,29 @@
+baseurl: /
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title.html
+auto: true
+paginate: 6
+paginate_path: page/:num
+excerpt_separator: '<!-- more -->'
+gems: [jekyll-paginate]
+
+blog:
+    name: Jeff驿站                                          # 博客名称
+    description:                                         # 博客描述
+    title:                                               # 网页标题
+    url: https://zmobi.github.io                         # 博客地址
+    duoshuo: zmobi                                # 多说ID
+    tongji:                                              # 百度统计ID
+    qiniu:                                               # 七牛云地址
+    google_analytics: UA-88258580-1                      # 谷歌统计
+    google_cse: 007073377861791415386:sewp18dkuu4
+author:
+    name:                                                # 作者名称
+    email:                                               # 邮箱地址
+    weibo:                                               # 微博地址
+    github: https://github.com/zmobi                     # GitHub地址
+    logo: /res/img/me.jpg                                # logo地址
+    douban:
+        name:                                            # 豆瓣地址名称
+        key:                                             # 豆瓣API Key

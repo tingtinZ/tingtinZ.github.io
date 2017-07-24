@@ -9,11 +9,11 @@ excerpt_separator: '<!-- more -->'
 gems: [jekyll-paginate]
 
 blog:
-    name: Jeff驿站                                          # 博客名称
+    name: 婷婷的博客                                       # 博客名称
     description:                                         # 博客描述
     title:                                               # 网页标题
-    url: https://zmobi.github.io                         # 博客地址
-    duoshuo: zmobi                                # 多说ID
+    url: https://tingtinZ.github.io                         # 博客地址
+    duoshuo: tingtinZ                                # 多说ID
     tongji:                                              # 百度统计ID
     qiniu:                                               # 七牛云地址
     google_analytics: UA-88258580-1                      # 谷歌统计
@@ -22,7 +22,7 @@ author:
     name:                                                # 作者名称
     email:                                               # 邮箱地址
     weibo:                                               # 微博地址
-    github: https://github.com/zmobi                     # GitHub地址
+    github: https://github.com/tingtinZ                     # GitHub地址
     logo: /res/img/me.jpg                                # logo地址
     douban:
         name:                                            # 豆瓣地址名称

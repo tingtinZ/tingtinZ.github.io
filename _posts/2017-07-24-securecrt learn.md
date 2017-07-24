@@ -10,9 +10,9 @@ tag: securecrt学习
 SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。
 ## 配置
 1. 设置虚拟机的网络模式，NAT或桥接。
-2. 在Ubuntu上用`ifconfig`命令查看IP地址信息。
+2. 在Ubuntu上用`ifconfig`命令查看IP地址信息。   
 
-```
+``` 
 [zhuangtingting@ ~]$ ifconfig
 enp0s3    Link encap:Ethernet  HWaddr 08:00:27:e9:50:03  
           inet addr:10.0.0.176  Bcast:10.0.0.255  Mask:255.255.255.0

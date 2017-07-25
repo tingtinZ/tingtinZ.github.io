@@ -6,8 +6,6 @@ descriptions: 学习Linux
 keywords: Linux
 ---
 
-# Linux学习小记
-
 Linux是Torvalds先生所开发出来的，基于GPL的版权宣告之下，可以在x86的架构下运作，也可以被移植到其他的大型主机上面的操作系统。
 
 <!-- more --> 

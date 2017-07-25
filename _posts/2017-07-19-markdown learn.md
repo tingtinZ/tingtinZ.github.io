@@ -6,8 +6,6 @@ descriptions: 轻量级标记语言Markdown，专注内容，减少排版烦恼�
 keywords: Markdown, 标记, 轻松排版
 ---
 
-# Markdown学习总结
-
 ## 一、什么是Markdown
 
 ​	Markdown 是一种轻量级标记语言，通过使用一些简单的符号（* / ` > [] () #）来标记文本格式，可以导出成PDF、HTML、WORD等多种格式。

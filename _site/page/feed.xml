@@ -5,15 +5,13 @@
     <description>婷婷的博客 - </description>
     <link>https://tingtinZ.github.io</link>
     <atom:link href="https://tingtinZ.github.io/page/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Jul 2017 17:06:46 +0800</pubDate>
-    <lastBuildDate>Tue, 25 Jul 2017 17:06:46 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2017 17:29:02 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2017 17:29:02 +0800</lastBuildDate>
     <generator></generator>
     
       <item>
         <title>Linux学习小记</title>
-        <description>&lt;h1 id=&quot;linux学习小记&quot;&gt;Linux学习小记&lt;/h1&gt;
-
-&lt;p&gt;Linux是Torvalds先生所开发出来的，基于GPL的版权宣告之下，可以在x86的架构下运作，也可以被移植到其他的大型主机上面的操作系统。&lt;/p&gt;
+        <description>&lt;p&gt;Linux是Torvalds先生所开发出来的，基于GPL的版权宣告之下，可以在x86的架构下运作，也可以被移植到其他的大型主机上面的操作系统。&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
@@ -179,8 +177,7 @@
     
       <item>
         <title>使用securecrt连接虚拟机内的 Ubuntu 系统</title>
-        <description>&lt;h1 id=&quot;使用securecrt-连接虚拟机内的-ubuntu-系统&quot;&gt;使用securecrt 连接虚拟机内的 Ubuntu 系统&lt;/h1&gt;
-&lt;h2 id=&quot;关于securecrt&quot;&gt;关于securecrt&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;关于securecrt&quot;&gt;关于securecrt&lt;/h2&gt;
 &lt;p&gt;SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -247,9 +244,7 @@ tcp6       0      0 :::22                   :::*                    LISTEN
     
       <item>
         <title>Git学习</title>
-        <description>&lt;h1 id=&quot;git学习总结&quot;&gt;Git学习总结&lt;/h1&gt;
-
-&lt;h2 id=&quot;初始git&quot;&gt;初始GIT&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;初始git&quot;&gt;初始GIT&lt;/h2&gt;
 
 &lt;p&gt;​	Git是一款开源的分布式版本控制系统，是用于Linux内核开发的版本控制工具。究其历史，起是Linus开发Git是为了作为一种过渡方案来代替BitKeeper，但发展到今日，Git分布式的优越性让越来越多人使用，如今在LInux、Unix、Mac和Windows这几大平台上都能够运行。&lt;/p&gt;
 
@@ -421,9 +416,7 @@ Branch master set up to track remote branch master from origin.
     
       <item>
         <title>Markdown学习</title>
-        <description>&lt;h1 id=&quot;markdown学习总结&quot;&gt;Markdown学习总结&lt;/h1&gt;
-
-&lt;h2 id=&quot;一什么是markdown&quot;&gt;一、什么是Markdown&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;一什么是markdown&quot;&gt;一、什么是Markdown&lt;/h2&gt;
 
 &lt;p&gt;​	Markdown 是一种轻量级标记语言，通过使用一些简单的符号（* / ` &amp;gt; [] () #）来标记文本格式，可以导出成PDF、HTML、WORD等多种格式。&lt;/p&gt;
 

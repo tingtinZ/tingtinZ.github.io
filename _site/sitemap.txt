@@ -9,6 +9,7 @@ https://tingtinZ.github.io/page/category
 https://tingtinZ.github.io/page/about
 https://tingtinZ.github.io/404
 
+https://tingtinZ.github.io/2017/07/25/Linux-learn.html
 https://tingtinZ.github.io/2017/07/24/securecrt-earn.html
 https://tingtinZ.github.io/2017/07/20/git-learn.html
 https://tingtinZ.github.io/2017/07/19/markdown-learn.html

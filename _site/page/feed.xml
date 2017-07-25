@@ -5,15 +5,186 @@
     <description>婷婷的博客 - </description>
     <link>https://tingtinZ.github.io</link>
     <atom:link href="https://tingtinZ.github.io/page/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 24 Jul 2017 23:12:51 +0800</pubDate>
-    <lastBuildDate>Mon, 24 Jul 2017 23:12:51 +0800</lastBuildDate>
+    <pubDate>Tue, 25 Jul 2017 17:06:46 +0800</pubDate>
+    <lastBuildDate>Tue, 25 Jul 2017 17:06:46 +0800</lastBuildDate>
     <generator></generator>
+    
+      <item>
+        <title>Linux学习小记</title>
+        <description>&lt;h1 id=&quot;linux学习小记&quot;&gt;Linux学习小记&lt;/h1&gt;
+
+&lt;p&gt;Linux是Torvalds先生所开发出来的，基于GPL的版权宣告之下，可以在x86的架构下运作，也可以被移植到其他的大型主机上面的操作系统。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&quot;linux-的特色&quot;&gt;Linux 的特色&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;自由与开放的使用与学习环境，自由修改原始码。&lt;/li&gt;
+  &lt;li&gt;配备需求低廉。&lt;/li&gt;
+  &lt;li&gt;核心功能强大而稳定。&lt;/li&gt;
+  &lt;li&gt;独立作业。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;linux在安全方面的优势&quot;&gt;Linux在安全方面的优势&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;发行版的数量极多。&lt;/p&gt;
+
+    &lt;p&gt;通俗地说：Linux 只是一个操作系统内核（Linux kernel），并不是一个操作系统。所谓的“发行版”，就是在 Linux kernel 的基础上，再加装相应的辅助性软件，使之成为一个“可用的”操作系统。&lt;/p&gt;
+
+    &lt;p&gt;Linux区别于其他操作系统的一大特色是：非常多的发行版，不同的发行版差别非常大，降低了攻击面的”确定性“。发行版的差别不光体现在“预装的应用软件不同”，还体现在“内核的版本不同”，还体现在“内核的编译参数不同”。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;具有高度可定制性。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Linux 的某些发行版可以比较方便地重编译内核。通过编译内核，可以把很多不需要的内核模块去掉（禁掉）。&lt;/li&gt;
+      &lt;li&gt;Linux 可以裁剪到”极致“，甚至把系统裁剪到只有几兆。&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;其高度的可定制性，使得降低了攻击面的”确定性“。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;支持多样化的硬件（CPU/主板/等），规避硬件的”单点风险“。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Linux是开源的。&lt;/p&gt;
+
+    &lt;p&gt;开源带来的好处之一是有助于代码审查。正是LInux 的完全开源，让程序员和安全研究人员都可以看这些源代码，发现安全隐患的概率就会大大提升。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Linux有更完善的软件包管机制。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;提供的软件包较可靠。&lt;/li&gt;
+      &lt;li&gt;自带”文件校验“的方式。如果软件在下载过程中被篡改了，在安装之前就会被发现。&lt;/li&gt;
+      &lt;li&gt;实现”自动升级“，大大降低安全漏洞的风险。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;相比于Windows更严格的”文件权限“。&lt;/p&gt;
+
+    &lt;p&gt;Linux根据专有的”可执行权限“决定文件是否可以运行，与扩展名无关。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;linux-的应用领域&quot;&gt;Linux 的应用领域&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Linux在企业应用方面，着重于”网路服务器“，”关键任务的应用(金融数据库、大型企业网管环境)“及”高效能运算”等任务。&lt;/li&gt;
+  &lt;li&gt;Linux在个人环境的使用上，着重于：桌面计算机、手持系统(PDA、手机)、嵌入式设备(如家电用品等)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;各硬件装置在linux中的档名&quot;&gt;各硬件装置在Linux中的档名&lt;/h2&gt;
+
+&lt;p&gt;在Linux系统中，每个装置都被当成一个文件来对待，在Linux这个系统当中，几乎所有的硬件装置文件都在/dev这个目录内。&lt;/p&gt;
+
+&lt;p&gt;以下列出几个常见的装置与其在Linux当中的档名：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;装置&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;装置在Linux内的档名&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;IDE硬盘机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/dev/hd[a-d]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SCSI/SATA/U盘硬盘机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/dev/sd[a-p]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;U盘快闪碟&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/dev/sd[a-p]  (与SATA相同)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;软盘机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/dev/fd[0-1]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;打印机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;25针: /dev/lp[0-2]     U盘: /dev/usb/lp[0-15]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;鼠标&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;U盘: /dev/usb/mouse[0-15]    PS2: /dev/psaux&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;当前CDROM/DVDROM&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/dev/cdrom&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;当前的鼠标&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/dev/mouse&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;磁带机&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;IDE: /dev/ht0SCSI: /dev/st0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;关于在Linux下的各种不同介面的磁碟的装置档名：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;IDE介面&lt;/p&gt;
+
+    &lt;p&gt;由于一个IDE排线可以连接两个IDE装置，又通常主机都会提供两个IDE介面，因此最多可以接到四个IDE装置。这两个IDE介面通常被称为IDE1及IDE2， 而每条排线上面的IDE装置可以被区分为Master与Slave。这四个IDE装置的档名为：&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;IDE\Jumper&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;Master&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;Slave&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;IDE1(Primary)&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;/dev/hda&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;/dev/hdb&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;IDE2(Secondary)&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;/dev/hdc&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;/dev/hdd&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SATA介面&lt;/p&gt;
+
+    &lt;p&gt;由于SATA/U盘/SCSI等磁碟介面都是使用SCSI模块来驱动的， 因此这些介面的磁碟装置档名都是/dev/sd[a-p]的格式。 但是与IDE介面不同的是，SATA/U盘介面的磁碟根本就没有一定的顺序，那么使用的是按照侦测到的顺序来决定装置档名，并非与实际插槽代号有关。&lt;/p&gt;
+
+    &lt;p&gt;例如:如果你的PC上面有两个SATA磁碟以及一个U盘磁碟，而主板上面有六个SATA的插槽。这两个SATA磁碟分别安插在主板上的SATA1, SATA5插槽上，这SATA1、SATA5、U盘磁碟(启动完成后才被系统捉到)三个磁碟在Linux中的装置档名分别是/dev/sda、/dev/sdb、/dev/sdc。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 25 Jul 2017 00:00:00 +0800</pubDate>
+        <link>https://tingtinZ.github.io/2017/07/25/Linux-learn.html</link>
+        <guid isPermaLink="true">https://tingtinZ.github.io/2017/07/25/Linux-learn.html</guid>
+        
+        <category>Linux</category>
+        
+      </item>
     
       <item>
         <title>使用securecrt连接虚拟机内的 Ubuntu 系统</title>
         <description>&lt;h1 id=&quot;使用securecrt-连接虚拟机内的-ubuntu-系统&quot;&gt;使用securecrt 连接虚拟机内的 Ubuntu 系统&lt;/h1&gt;
 &lt;h2 id=&quot;关于securecrt&quot;&gt;关于securecrt&lt;/h2&gt;
 &lt;p&gt;SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
 &lt;h2 id=&quot;配置&quot;&gt;配置&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;设置虚拟机的网络模式，NAT或桥接。&lt;/li&gt;
@@ -81,6 +252,8 @@ tcp6       0      0 :::22                   :::*                    LISTEN
 &lt;h2 id=&quot;初始git&quot;&gt;初始GIT&lt;/h2&gt;
 
 &lt;p&gt;​	Git是一款开源的分布式版本控制系统，是用于Linux内核开发的版本控制工具。究其历史，起是Linus开发Git是为了作为一种过渡方案来代替BitKeeper，但发展到今日，Git分布式的优越性让越来越多人使用，如今在LInux、Unix、Mac和Windows这几大平台上都能够运行。&lt;/p&gt;
+
+&lt;!-- more --&gt;
 
 &lt;h2 id=&quot;git常用命令&quot;&gt;Git常用命令&lt;/h2&gt;
 
@@ -253,6 +426,8 @@ Branch master set up to track remote branch master from origin.
 &lt;h2 id=&quot;一什么是markdown&quot;&gt;一、什么是Markdown&lt;/h2&gt;
 
 &lt;p&gt;​	Markdown 是一种轻量级标记语言，通过使用一些简单的符号（* / ` &amp;gt; [] () #）来标记文本格式，可以导出成PDF、HTML、WORD等多种格式。&lt;/p&gt;
+
+&lt;!-- more --&gt;
 
 &lt;h2 id=&quot;二markdown的优点&quot;&gt;二、Markdown的优点&lt;/h2&gt;
 

@@ -72,6 +72,39 @@
 <div class="posts">
   <section class="post">
     <header class="post-header">
+      <h1 class="post-title"><a href="/2017/07/25/Linux-learn.html">Linux学习小记</a></h1>
+      <p class="post-meta">
+        <i class="fa fa-calendar"></i>
+        2017年07月25日
+        <i class="space"></i>
+        
+        <i class="fa fa-tags"></i>
+        <a class="post-category" href="/page/category.html#Linux">Linux</a>
+        
+        
+        <a class="post-category" href="/page/category.html#"></a>
+        
+      </p>
+    </header>
+      <div class="post-main"> 
+      <!-- <h1 id="linux学习小记">Linux学习小记</h1>
+
+<p>Linux是Torvalds先生所开发出来的，基于GPL的版权宣告之下，可以在x86的架构下运作，也可以被移植到其他的大型主机上面的操作系统。</p>
+
+ -->
+      <h1 id="linux学习小记">Linux学习小记</h1>
+
+<p>Linux是Torvalds先生所开发出来的，基于GPL的版权宣告之下，可以在x86的架构下运作，也可以被移植到其他的大型主机上面的操作系统。</p>
+
+
+      <div class="readall"><a href="/2017/07/25/Linux-learn.html" id="post-readall">阅读全文&nbsp;<i class="fa fa-chevron-right"></i></a></div>
+    </div>
+  </section>
+</div>
+
+<div class="posts">
+  <section class="post">
+    <header class="post-header">
       <h1 class="post-title"><a href="/2017/07/24/securecrt-earn.html">使用securecrt连接虚拟机内的 Ubuntu 系统</a></h1>
       <p class="post-meta">
         <i class="fa fa-calendar"></i>
@@ -90,112 +123,12 @@
       <!-- <h1 id="使用securecrt-连接虚拟机内的-ubuntu-系统">使用securecrt 连接虚拟机内的 Ubuntu 系统</h1>
 <h2 id="关于securecrt">关于securecrt</h2>
 <p>SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。</p>
-<h2 id="配置">配置</h2>
-<ol>
-  <li>设置虚拟机的网络模式，NAT或桥接。</li>
-  <li>在Ubuntu上用<code class="highlighter-rouge">ifconfig</code>命令查看IP地址信息。
-```
-[zhuangtingting@ ~]$ ifconfig
-enp0s3    Link encap:Ethernet  HWaddr 08:00:27:e9:50:03<br />
-       inet addr:10.0.0.176  Bcast:10.0.0.255  Mask:255.255.255.0
-       inet6 addr: fe80::378a:3320:64c7:7952/64 Scope:Link
-       UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-       RX packets:405 errors:0 dropped:0 overruns:0 frame:0
-       TX packets:397 errors:0 dropped:0 overruns:0 carrier:0
-       collisions:0 txqueuelen:1000 
-       RX bytes:143029 (143.0 KB)  TX bytes:73878 (73.8 KB)</li>
-</ol>
 
-<p>lo        Link encap:Local Loopback<br />
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:157 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:157 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1 
-          RX bytes:15404 (15.4 KB)  TX bytes:15404 (15.4 KB)</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>这里我的IP地址是10.0.0.176
-
-## 安装SSH
-1. 在Ubuntu上使用`ssh username@localhost`命令检查是否已经安装SSH服务。
-2. 若无，则安装SSH
-</code></pre>
-</div>
-<p>$ sudo apt-get install openssh-server</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>3. 查看是否有进程在22端口上监听，即是否已启动：
-</code></pre>
-</div>
-<p>[zhuangtingting@ ~]$ netstat -nat | grep 22
-tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN   <br />
-tcp6       0      0 :::22                   :::*                    LISTEN
-```</p>
-<h2 id="securecrt连接ubuntu">SecureCRT连接Ubuntu</h2>
-<ol>
-  <li>打开SecureCRT软件，进行配置。ProtoCol模式选为SSH2，Port为22，HostName为192.168.172.168（就是我们Ubuntu的IP地址），UserName为我们Ubuntu的登录账户。</li>
-  <li>点击“Connect”后，PassWord为我们Ubuntu的登录密码。</li>
-  <li>现在就可以尝试输入linux命令检验成果。
-    <h2 id="遇到的问题">遇到的问题</h2>
-    <p>如此配置之后，发现在宿主机上浏览器访问不了页面了。</p>
-    <blockquote>
-      <p><a href="http://www.linuxidc.com/Linux/2015-05/117048.htm">SecureCRT连接Ubuntu参考教程</a></p>
-    </blockquote>
-  </li>
-</ol>
  -->
       <h1 id="使用securecrt-连接虚拟机内的-ubuntu-系统">使用securecrt 连接虚拟机内的 Ubuntu 系统</h1>
 <h2 id="关于securecrt">关于securecrt</h2>
 <p>SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。</p>
-<h2 id="配置">配置</h2>
-<ol>
-  <li>设置虚拟机的网络模式，NAT或桥接。</li>
-  <li>在Ubuntu上用<code class="highlighter-rouge">ifconfig</code>命令查看IP地址信息。
-```
-[zhuangtingting@ ~]$ ifconfig
-enp0s3    Link encap:Ethernet  HWaddr 08:00:27:e9:50:03<br />
-       inet addr:10.0.0.176  Bcast:10.0.0.255  Mask:255.255.255.0
-       inet6 addr: fe80::378a:3320:64c7:7952/64 Scope:Link
-       UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-       RX packets:405 errors:0 dropped:0 overruns:0 frame:0
-       TX packets:397 errors:0 dropped:0 overruns:0 carrier:0
-       collisions:0 txqueuelen:1000 
-       RX bytes:143029 (143.0 KB)  TX bytes:73878 (73.8 KB)</li>
-</ol>
 
-<p>lo        Link encap:Local Loopback<br />
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:157 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:157 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1 
-          RX bytes:15404 (15.4 KB)  TX bytes:15404 (15.4 KB)</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>这里我的IP地址是10.0.0.176
-
-## 安装SSH
-1. 在Ubuntu上使用`ssh username@localhost`命令检查是否已经安装SSH服务。
-2. 若无，则安装SSH
-</code></pre>
-</div>
-<p>$ sudo apt-get install openssh-server</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>3. 查看是否有进程在22端口上监听，即是否已启动：
-</code></pre>
-</div>
-<p>[zhuangtingting@ ~]$ netstat -nat | grep 22
-tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN   <br />
-tcp6       0      0 :::22                   :::*                    LISTEN
-```</p>
-<h2 id="securecrt连接ubuntu">SecureCRT连接Ubuntu</h2>
-<ol>
-  <li>打开SecureCRT软件，进行配置。ProtoCol模式选为SSH2，Port为22，HostName为192.168.172.168（就是我们Ubuntu的IP地址），UserName为我们Ubuntu的登录账户。</li>
-  <li>点击“Connect”后，PassWord为我们Ubuntu的登录密码。</li>
-  <li>现在就可以尝试输入linux命令检验成果。
-    <h2 id="遇到的问题">遇到的问题</h2>
-    <p>如此配置之后，发现在宿主机上浏览器访问不了页面了。</p>
-    <blockquote>
-      <p><a href="http://www.linuxidc.com/Linux/2015-05/117048.htm">SecureCRT连接Ubuntu参考教程</a></p>
-    </blockquote>
-  </li>
-</ol>
 
       <div class="readall"><a href="/2017/07/24/securecrt-earn.html" id="post-readall">阅读全文&nbsp;<i class="fa fa-chevron-right"></i></a></div>
     </div>
@@ -226,322 +159,12 @@ tcp6       0      0 :::22                   :::*                    LISTEN
 
 <p>​	Git是一款开源的分布式版本控制系统，是用于Linux内核开发的版本控制工具。究其历史，起是Linus开发Git是为了作为一种过渡方案来代替BitKeeper，但发展到今日，Git分布式的优越性让越来越多人使用，如今在LInux、Unix、Mac和Windows这几大平台上都能够运行。</p>
 
-<h2 id="git常用命令">Git常用命令</h2>
-
-<p><code class="highlighter-rouge">git</code> 查看git是否安装</p>
-
-<p><code class="highlighter-rouge">sudo apt-get install git</code> 安装git</p>
-
-<p><code class="highlighter-rouge">git config</code> 设置名字和email地址</p>
-
-<p><code class="highlighter-rouge">git init</code> 初始化仓库</p>
-
-<p><code class="highlighter-rouge">git add</code> 添加文件到仓库</p>
-
-<p><code class="highlighter-rouge">git commit</code> 把文件提交到仓库</p>
-
-<p><code class="highlighter-rouge">git status</code> 查看仓库状态</p>
-
-<p><code class="highlighter-rouge">git diff</code> 查看文件的修改</p>
-
-<p><code class="highlighter-rouge">git log</code> 查看提交日志</p>
-
-<p><code class="highlighter-rouge">git reset</code> 版本回退（<code class="highlighter-rouge">HEAD</code> 表示当前版本，<code class="highlighter-rouge">HEAD^</code> 表示上一个版本，<code class="highlighter-rouge">HEAD^^</code> 表示上上个版本，用<code class="highlighter-rouge">commit id</code> 可以指定回到某个版本，当使用<code class="highlighter-rouge">git reset HEAD file</code>可以把暂存区的修改回退到工作区）</p>
-
-<p><code class="highlighter-rouge">git relog</code> 查看命令历史，每个版本的<code class="highlighter-rouge">commit id</code></p>
-
-<p><code class="highlighter-rouge">git checkout -- file</code> 丢弃工作区的修改（没有<code class="highlighter-rouge">--</code>，就变成了“切换到另一个分支”的命令）</p>
-
-<p><code class="highlighter-rouge">git rm</code> 删除（注意接着还要<code class="highlighter-rouge">git commit</code>)</p>
-
-<h2 id="工作区暂存区master分支">工作区、暂存区、master分支</h2>
-
-<p>​	工作区有一个隐藏目录<code class="highlighter-rouge">.git</code>是Git的版本库。版本库里有一个称为stage或index 的暂存区。在创建时版本库时，Git自动为我们创建了唯一一个<code class="highlighter-rouge">master</code>分支。</p>
-
-<p>​	建立版本库并提交文件的状态可描绘为：</p>
-
-<p>​	工作区存在需要提交到版本库的文件时，用<code class="highlighter-rouge">git add</code>命令添加文件时实际上将文件修改添加到暂存区。接着用<code class="highlighter-rouge">git commit</code>提交更改时实际上是把暂存区的所有内容提交到<code class="highlighter-rouge">master</code>分支。</p>
-
-<p>​	如果不添加到暂存区，那么所做的修改是无法单单通过<code class="highlighter-rouge">git commit</code>提交到仓库的。</p>
-
-<h2 id="github">GitHub</h2>
-
- 	GitHub是一个提供Git仓库托管服务的网站，在上面可以免费获得Git远程仓库。
-
-<p>​	由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以在使用前需要创建SSH Key。</p>
-
-<p>​	在GitHub上，可以创建一个GitHub仓库，再把一个本地仓库与之关联，就可以把本地仓库的内容推送到Git仓库中。实现方法：在本地仓库下运行命令：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git remote add origin git@github.com:tingtingZ/learngit.git
-</code></pre>
-</div>
-
-<p>​	其中，“tingtingZ“是GitHub账户名。</p>
-
-<p>​	接下来，使用<code class="highlighter-rouge">git push</code>命令，把当前分支<code class="highlighter-rouge">master</code>推送到远程。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-Username for 'https://github.com': tingtinZ
-Password for 'https://tingtinZ@github.com': 
-Counting objects: 9, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 779 bytes | 0 bytes/s, done.
-Total 9 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/tingtinZ/learngit.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.
-</code></pre>
-</div>
-
-<p>​	使用命令<code class="highlighter-rouge">git push -u origin master</code>第一次推送master分支的所有内容。</p>
-
-<p>​	此后，每次本地提交后，只要有必要，就可以使用命令<code class="highlighter-rouge">git push origin master</code>推送最新修改。</p>
-
-<h2 id="学习中出现的问题及解决">学习中出现的问题及解决</h2>
-
-<ol>
-  <li>
-    <p>问题1：使用<code class="highlighter-rouge">git commit</code> 命令将文件提交到仓库时出现“Please tell me who you are”的提示。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git commit -m "wrote a readme file"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'zhuangtingting@zhuangtingting-VirtualBox.(none)')
-</code></pre>
-    </div>
-
-    <p>解决：Git是分布式版本控制系统，必须要通过设置名字和email地址。这里因为安装后没有进行这一个步骤，所以出现该提示。用<code class="highlighter-rouge">git config</code>命令设置之后，<code class="highlighter-rouge">git commit</code> 正常运行。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git config user.email "634545656@qq.com"
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git config user.name "zhuangtingting"
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git commit -m "wrote a readme file"
-[master (root-commit) 11cbb73] wrote a readme file
- 1 file changed, 2 insertions(+)
- create mode 100644 readme.txt
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>问题2：在使用git push<code class="highlighter-rouge">命令把当前分支</code>master`推送到远程时，出现” Repository not found.”的错误提示，显示仓库没有找到。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-The authenticity of host 'github.com (192.30.255.112)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.255.112' (RSA) to the list of known hosts.
-ERROR: Repository not found.
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-</code></pre>
-    </div>
-
-    <p>解决：使用<code class="highlighter-rouge">ssh git@github.com</code> 命令测试是否能连接到GitHub时：</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>root@zhuangtingting-VirtualBox:/home/zhuangtingting/learngit# ssh git@github.comThe authenticity of host 'github.com (192.30.255.113)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.255.113' (RSA) to the list of known hosts.
-PTY allocation request failed on channel 0
-Hi tingtinZ! You've successfully authenticated, but GitHub does not provide shell access.
-Connection to github.com closed.
-</code></pre>
-    </div>
-
-    <p>结果属于正常回显，证明可以正常连接到GitHub。</p>
-
-    <p>删除原先设置的远程仓库origin，再重新添加远程仓库后，不再出现此错误，成功运行。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-Username for 'https://github.com': tingtinZ
-Password for 'https://tingtinZ@github.com': 
-Counting objects: 9, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 779 bytes | 0 bytes/s, done.
-Total 9 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/tingtinZ/learngit.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.
-</code></pre>
-    </div>
-
-    <p>​</p>
-  </li>
-</ol>
-
  -->
       <h1 id="git学习总结">Git学习总结</h1>
 
 <h2 id="初始git">初始GIT</h2>
 
 <p>​	Git是一款开源的分布式版本控制系统，是用于Linux内核开发的版本控制工具。究其历史，起是Linus开发Git是为了作为一种过渡方案来代替BitKeeper，但发展到今日，Git分布式的优越性让越来越多人使用，如今在LInux、Unix、Mac和Windows这几大平台上都能够运行。</p>
-
-<h2 id="git常用命令">Git常用命令</h2>
-
-<p><code class="highlighter-rouge">git</code> 查看git是否安装</p>
-
-<p><code class="highlighter-rouge">sudo apt-get install git</code> 安装git</p>
-
-<p><code class="highlighter-rouge">git config</code> 设置名字和email地址</p>
-
-<p><code class="highlighter-rouge">git init</code> 初始化仓库</p>
-
-<p><code class="highlighter-rouge">git add</code> 添加文件到仓库</p>
-
-<p><code class="highlighter-rouge">git commit</code> 把文件提交到仓库</p>
-
-<p><code class="highlighter-rouge">git status</code> 查看仓库状态</p>
-
-<p><code class="highlighter-rouge">git diff</code> 查看文件的修改</p>
-
-<p><code class="highlighter-rouge">git log</code> 查看提交日志</p>
-
-<p><code class="highlighter-rouge">git reset</code> 版本回退（<code class="highlighter-rouge">HEAD</code> 表示当前版本，<code class="highlighter-rouge">HEAD^</code> 表示上一个版本，<code class="highlighter-rouge">HEAD^^</code> 表示上上个版本，用<code class="highlighter-rouge">commit id</code> 可以指定回到某个版本，当使用<code class="highlighter-rouge">git reset HEAD file</code>可以把暂存区的修改回退到工作区）</p>
-
-<p><code class="highlighter-rouge">git relog</code> 查看命令历史，每个版本的<code class="highlighter-rouge">commit id</code></p>
-
-<p><code class="highlighter-rouge">git checkout -- file</code> 丢弃工作区的修改（没有<code class="highlighter-rouge">--</code>，就变成了“切换到另一个分支”的命令）</p>
-
-<p><code class="highlighter-rouge">git rm</code> 删除（注意接着还要<code class="highlighter-rouge">git commit</code>)</p>
-
-<h2 id="工作区暂存区master分支">工作区、暂存区、master分支</h2>
-
-<p>​	工作区有一个隐藏目录<code class="highlighter-rouge">.git</code>是Git的版本库。版本库里有一个称为stage或index 的暂存区。在创建时版本库时，Git自动为我们创建了唯一一个<code class="highlighter-rouge">master</code>分支。</p>
-
-<p>​	建立版本库并提交文件的状态可描绘为：</p>
-
-<p>​	工作区存在需要提交到版本库的文件时，用<code class="highlighter-rouge">git add</code>命令添加文件时实际上将文件修改添加到暂存区。接着用<code class="highlighter-rouge">git commit</code>提交更改时实际上是把暂存区的所有内容提交到<code class="highlighter-rouge">master</code>分支。</p>
-
-<p>​	如果不添加到暂存区，那么所做的修改是无法单单通过<code class="highlighter-rouge">git commit</code>提交到仓库的。</p>
-
-<h2 id="github">GitHub</h2>
-
- 	GitHub是一个提供Git仓库托管服务的网站，在上面可以免费获得Git远程仓库。
-
-<p>​	由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以在使用前需要创建SSH Key。</p>
-
-<p>​	在GitHub上，可以创建一个GitHub仓库，再把一个本地仓库与之关联，就可以把本地仓库的内容推送到Git仓库中。实现方法：在本地仓库下运行命令：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git remote add origin git@github.com:tingtingZ/learngit.git
-</code></pre>
-</div>
-
-<p>​	其中，“tingtingZ“是GitHub账户名。</p>
-
-<p>​	接下来，使用<code class="highlighter-rouge">git push</code>命令，把当前分支<code class="highlighter-rouge">master</code>推送到远程。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-Username for 'https://github.com': tingtinZ
-Password for 'https://tingtinZ@github.com': 
-Counting objects: 9, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 779 bytes | 0 bytes/s, done.
-Total 9 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/tingtinZ/learngit.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.
-</code></pre>
-</div>
-
-<p>​	使用命令<code class="highlighter-rouge">git push -u origin master</code>第一次推送master分支的所有内容。</p>
-
-<p>​	此后，每次本地提交后，只要有必要，就可以使用命令<code class="highlighter-rouge">git push origin master</code>推送最新修改。</p>
-
-<h2 id="学习中出现的问题及解决">学习中出现的问题及解决</h2>
-
-<ol>
-  <li>
-    <p>问题1：使用<code class="highlighter-rouge">git commit</code> 命令将文件提交到仓库时出现“Please tell me who you are”的提示。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git commit -m "wrote a readme file"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'zhuangtingting@zhuangtingting-VirtualBox.(none)')
-</code></pre>
-    </div>
-
-    <p>解决：Git是分布式版本控制系统，必须要通过设置名字和email地址。这里因为安装后没有进行这一个步骤，所以出现该提示。用<code class="highlighter-rouge">git config</code>命令设置之后，<code class="highlighter-rouge">git commit</code> 正常运行。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git config user.email "634545656@qq.com"
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git config user.name "zhuangtingting"
-zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git commit -m "wrote a readme file"
-[master (root-commit) 11cbb73] wrote a readme file
- 1 file changed, 2 insertions(+)
- create mode 100644 readme.txt
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>问题2：在使用git push<code class="highlighter-rouge">命令把当前分支</code>master`推送到远程时，出现” Repository not found.”的错误提示，显示仓库没有找到。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-The authenticity of host 'github.com (192.30.255.112)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.255.112' (RSA) to the list of known hosts.
-ERROR: Repository not found.
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-</code></pre>
-    </div>
-
-    <p>解决：使用<code class="highlighter-rouge">ssh git@github.com</code> 命令测试是否能连接到GitHub时：</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>root@zhuangtingting-VirtualBox:/home/zhuangtingting/learngit# ssh git@github.comThe authenticity of host 'github.com (192.30.255.113)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.255.113' (RSA) to the list of known hosts.
-PTY allocation request failed on channel 0
-Hi tingtinZ! You've successfully authenticated, but GitHub does not provide shell access.
-Connection to github.com closed.
-</code></pre>
-    </div>
-
-    <p>结果属于正常回显，证明可以正常连接到GitHub。</p>
-
-    <p>删除原先设置的远程仓库origin，再重新添加远程仓库后，不再出现此错误，成功运行。</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~/learngit$ git push -u origin master
-Username for 'https://github.com': tingtinZ
-Password for 'https://tingtinZ@github.com': 
-Counting objects: 9, done.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 779 bytes | 0 bytes/s, done.
-Total 9 (delta 1), reused 0 (delta 0)
-remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/tingtinZ/learngit.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from origin.
-</code></pre>
-    </div>
-
-    <p>​</p>
-  </li>
-</ol>
 
 
       <div class="readall"><a href="/2017/07/20/git-learn.html" id="post-readall">阅读全文&nbsp;<i class="fa fa-chevron-right"></i></a></div>
@@ -573,117 +196,6 @@ Branch master set up to track remote branch master from origin.
 
 <p>​	Markdown 是一种轻量级标记语言，通过使用一些简单的符号（* / ` &gt; [] () #）来标记文本格式，可以导出成PDF、HTML、WORD等多种格式。</p>
 
-<h2 id="二markdown的优点">二、Markdown的优点</h2>
-
-<ol>
-  <li>语法简单。使用简单的符号标记格式，简单易学。</li>
-  <li>兼容性强。Markdown 是兼容性非常强的纯文本内容，可以使用任何编辑器打开，格式都不会乱。</li>
-  <li>导出方便。Markdown 可以导出 PDF、Word、HTML、Epub、LaTeX 等文件格式。</li>
-  <li>专注内容。不用纠结排版问题。</li>
-  <li>团队协作。 Github、Gitlab、Gitbook 都支持 Markdown，便于团队协作。</li>
-</ol>
-
-<h2 id="三markdown不适用的情况">三、Markdown不适用的情况</h2>
-
-<ol>
-  <li>需要复杂排版的时候，比如纸版图书编辑就不太适合用 Markdown。我的做法是从 Markdown 导出 Word 文档，然后交给编辑。</li>
-  <li>需要复杂表格的时候，因为 Markdown 对表格的支持太简单了。</li>
-  <li>需要调整图片大小或直接贴本地图片的时候。</li>
-</ol>
-
-<h2 id="四markdown的常用语法">四、Markdown的常用语法</h2>
-
-<ol>
-  <li>
-    <p>标题</p>
-
-    <p>行首通过“#”数量表示几级标题，一共只有1~6级标题，1级标题字体最大。</p>
-  </li>
-  <li>
-    <p>粗体</p>
-
-    <p>将需要设置为斜体的文字两端使用2个“*”包含起来。</p>
-  </li>
-  <li>
-    <p>斜体</p>
-
-    <p>将需要设置为斜体的文字两端使用1个“*”包含起来。</p>
-  </li>
-  <li>
-    <p>有序列表</p>
-
-    <p>使用数字后面跟上句号，并空格。</p>
-  </li>
-  <li>
-    <p>无序列表</p>
-
-    <p>在文字开头添加(*, +, -)实现无序列表，但是要注意和文字之间需要添加空格。</p>
-  </li>
-  <li>
-    <p>引用</p>
-
-    <p>开头添加“&gt;”表示。</p>
-  </li>
-  <li>
-    <p>图片</p>
-
-    <p>语法：<code class="highlighter-rouge">![]()</code>。</p>
-  </li>
-  <li>
-    <p>链接：</p>
-
-    <p>语法：<code class="highlighter-rouge">[]()。</code></p>
-  </li>
-  <li>
-    <p>代码</p>
-
-    <p>第一种：简单文字出现一个代码框。使用<code class="highlighter-rouge">&lt;blockquote&gt;</code>。
-第二种：大片文字需要实现代码框。使用Tab和四个空格。</p>
-  </li>
-</ol>
-
-<h2 id="五支持markdown-的软件及网站">五、支持Markdown 的软件及网站</h2>
-
-<ol>
-  <li>
-    <p>不同系统下常用的Markdown编辑器</p>
-
-    <p>Windows：MarkdownPad、Smark、Atom、VSCode、Miu、Typora、RStudio</p>
-
-    <p>Linux：VSCode、Atom、ReText、UberWriter、RStudio</p>
-
-    <p>OSX：VSCode、Atom、Byword、Mou、Typora、MacDown、RStudio</p>
-  </li>
-  <li>
-    <p>在线网站</p>
-
-    <p>简书、知乎、CSDN、Github、Gitlab、Gitboo</p>
-  </li>
-</ol>
-
-<h2 id="六总结">六、总结</h2>
-
-<ol>
-  <li>
-    <p>学习中遇到的问题：</p>
-
-    <p>（1）刚开始下载的编辑器是MarkdownPad，但是安装失败。</p>
-
-    <p>（2）Typora上使用嵌入实现居中效果时，并没有渲染出效果。</p>
-  </li>
-  <li>
-    <p>问题的解决：</p>
-
-    <p>（1）没有成功解决安装失败的问题，安装了另一款编辑器Typora。</p>
-
-    <p>（2）通过查阅资料得知该效果在导出文件时才能显现。</p>
-  </li>
-  <li>
-    <p>学习心得：</p>
-
-    <p>​	通过查阅资料了解到Markdown的概念及语法，并进行实践，在windows7系统下安装支持Markdown的Typora编辑器后进行编辑。在Typora 的使用上，Typora 的菜单栏对于标题、段落、列表、表格等的格式排版给予了很大的便利。Typora 的编辑与预览融为一体，回车后立即渲染效果，但是却不能再次编辑。另外，对于一些嵌入也不能进行预览，需要导出后才能观察到效果。在Markdown的实践学习体会上，深深的体会到Markdown相对于word等编辑对于并不用到word太多功能的使用者来说，使用Markdown能够轻松进行要求不太高的排版，而且在导出上导出的格式多样，消除了因为要编辑不同格式的文件而下载诸多编辑器和软件的麻烦。</p>
-  </li>
-</ol>
  -->
       <h1 id="markdown学习总结">Markdown学习总结</h1>
 
@@ -691,117 +203,6 @@ Branch master set up to track remote branch master from origin.
 
 <p>​	Markdown 是一种轻量级标记语言，通过使用一些简单的符号（* / ` &gt; [] () #）来标记文本格式，可以导出成PDF、HTML、WORD等多种格式。</p>
 
-<h2 id="二markdown的优点">二、Markdown的优点</h2>
-
-<ol>
-  <li>语法简单。使用简单的符号标记格式，简单易学。</li>
-  <li>兼容性强。Markdown 是兼容性非常强的纯文本内容，可以使用任何编辑器打开，格式都不会乱。</li>
-  <li>导出方便。Markdown 可以导出 PDF、Word、HTML、Epub、LaTeX 等文件格式。</li>
-  <li>专注内容。不用纠结排版问题。</li>
-  <li>团队协作。 Github、Gitlab、Gitbook 都支持 Markdown，便于团队协作。</li>
-</ol>
-
-<h2 id="三markdown不适用的情况">三、Markdown不适用的情况</h2>
-
-<ol>
-  <li>需要复杂排版的时候，比如纸版图书编辑就不太适合用 Markdown。我的做法是从 Markdown 导出 Word 文档，然后交给编辑。</li>
-  <li>需要复杂表格的时候，因为 Markdown 对表格的支持太简单了。</li>
-  <li>需要调整图片大小或直接贴本地图片的时候。</li>
-</ol>
-
-<h2 id="四markdown的常用语法">四、Markdown的常用语法</h2>
-
-<ol>
-  <li>
-    <p>标题</p>
-
-    <p>行首通过“#”数量表示几级标题，一共只有1~6级标题，1级标题字体最大。</p>
-  </li>
-  <li>
-    <p>粗体</p>
-
-    <p>将需要设置为斜体的文字两端使用2个“*”包含起来。</p>
-  </li>
-  <li>
-    <p>斜体</p>
-
-    <p>将需要设置为斜体的文字两端使用1个“*”包含起来。</p>
-  </li>
-  <li>
-    <p>有序列表</p>
-
-    <p>使用数字后面跟上句号，并空格。</p>
-  </li>
-  <li>
-    <p>无序列表</p>
-
-    <p>在文字开头添加(*, +, -)实现无序列表，但是要注意和文字之间需要添加空格。</p>
-  </li>
-  <li>
-    <p>引用</p>
-
-    <p>开头添加“&gt;”表示。</p>
-  </li>
-  <li>
-    <p>图片</p>
-
-    <p>语法：<code class="highlighter-rouge">![]()</code>。</p>
-  </li>
-  <li>
-    <p>链接：</p>
-
-    <p>语法：<code class="highlighter-rouge">[]()。</code></p>
-  </li>
-  <li>
-    <p>代码</p>
-
-    <p>第一种：简单文字出现一个代码框。使用<code class="highlighter-rouge">&lt;blockquote&gt;</code>。
-第二种：大片文字需要实现代码框。使用Tab和四个空格。</p>
-  </li>
-</ol>
-
-<h2 id="五支持markdown-的软件及网站">五、支持Markdown 的软件及网站</h2>
-
-<ol>
-  <li>
-    <p>不同系统下常用的Markdown编辑器</p>
-
-    <p>Windows：MarkdownPad、Smark、Atom、VSCode、Miu、Typora、RStudio</p>
-
-    <p>Linux：VSCode、Atom、ReText、UberWriter、RStudio</p>
-
-    <p>OSX：VSCode、Atom、Byword、Mou、Typora、MacDown、RStudio</p>
-  </li>
-  <li>
-    <p>在线网站</p>
-
-    <p>简书、知乎、CSDN、Github、Gitlab、Gitboo</p>
-  </li>
-</ol>
-
-<h2 id="六总结">六、总结</h2>
-
-<ol>
-  <li>
-    <p>学习中遇到的问题：</p>
-
-    <p>（1）刚开始下载的编辑器是MarkdownPad，但是安装失败。</p>
-
-    <p>（2）Typora上使用嵌入实现居中效果时，并没有渲染出效果。</p>
-  </li>
-  <li>
-    <p>问题的解决：</p>
-
-    <p>（1）没有成功解决安装失败的问题，安装了另一款编辑器Typora。</p>
-
-    <p>（2）通过查阅资料得知该效果在导出文件时才能显现。</p>
-  </li>
-  <li>
-    <p>学习心得：</p>
-
-    <p>​	通过查阅资料了解到Markdown的概念及语法，并进行实践，在windows7系统下安装支持Markdown的Typora编辑器后进行编辑。在Typora 的使用上，Typora 的菜单栏对于标题、段落、列表、表格等的格式排版给予了很大的便利。Typora 的编辑与预览融为一体，回车后立即渲染效果，但是却不能再次编辑。另外，对于一些嵌入也不能进行预览，需要导出后才能观察到效果。在Markdown的实践学习体会上，深深的体会到Markdown相对于word等编辑对于并不用到word太多功能的使用者来说，使用Markdown能够轻松进行要求不太高的排版，而且在导出上导出的格式多样，消除了因为要编辑不同格式的文件而下载诸多编辑器和软件的麻烦。</p>
-  </li>
-</ol>
 
       <div class="readall"><a href="/2017/07/19/markdown-learn.html" id="post-readall">阅读全文&nbsp;<i class="fa fa-chevron-right"></i></a></div>
     </div>

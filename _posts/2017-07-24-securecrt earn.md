@@ -9,6 +9,9 @@ keywords: securecrt, ssh
 # 使用securecrt 连接虚拟机内的 Ubuntu 系统
 ## 关于securecrt
 SecureCRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单地说是Windows下登录UNIX或Linux服务器主机的软件。
+
+<!-- more --> 
+
 ## 配置
 1. 设置虚拟机的网络模式，NAT或桥接。
 2. 在Ubuntu上用`ifconfig`命令查看IP地址信息。

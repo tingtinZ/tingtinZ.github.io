@@ -3,7 +3,7 @@ layout: post
 title: Linux学习小记2
 category: Linux
 descriptions: 学习Linux
-keywords: Linux
+keywords: Linux shell
 ---
 
 继昨天学习了Linux的历史简介、特色、与硬件的联系后，今天学习的重点会放在shell部分。
@@ -50,7 +50,7 @@ zhuangtingting@zhuangtingting-VirtualBox:~$
 
 + 光标移动
 
-  `ctrl+a`移动光标到行首；`ctrl+e`移动光标到行尾。
+  `ctrl+a`移动光标到行首；`ctrl+e`移动光标到行尾；`ctrl+u` 删除整行；`ctrl+d` 删除单词。
 
 ## 通配符
 

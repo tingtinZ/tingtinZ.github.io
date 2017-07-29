@@ -51,9 +51,16 @@ keywords: Disqus 评论 博客
    };
    ```
 
-   可以看出有两处：`this.page.url`和`this.page.identifier` ，两者用其一就可以，不使用的设置为空值，前者是所在页面的规范链接，后者是页面的id，这样的设置很好地将disqus评论系统和我所在的页面关联起来。关于这两个的优先查找级别：`identifier`>`url` 。如果使用`url`的话，在不同的博客文章页面的url都不相同，就要做一个url的变动，因此比较推荐用`identifier`。
-
-4. 将通用代码粘贴到_includes下的disqus.html里
+   可以看出有两处：`this.page.url`和`this.page.identifier` ，两者用其一就可以，不使用的设置为空值，前者是所在页面的规范链接，后者是页面的id，这样的设置很好地将disqus评论系统和我所在的页面关联起来。关于这两个的优先查找级别：`identifier`>`url` 。
+   由于我的博客是生成的静态网页，没有办法生成页面能唯一标识的变量id，这里将会用`identifier`去设置`disqus_config`
+   怎么样让我的评论系统与每一篇文章的所在关联起来?
+   我们可以看到每篇文章的url是不同的，下面对我所做的配置进行解析：
+   
+   ```
+   this.page.url = "{{site.blog.url}}{{page.url}}";
+   ```
+   以上的`page.url`并不包括域名，在_config.yml文件的“permalink: /:year/:month/:day/:title.html”就可以发现，其实`page.url`指的是这部分的文章url，那么我们还缺少我们的域名。`site.blog.url`指的是在_config.yml文件下查找blog部分里的url，也就是我们博客所在的url，那么就可以得到文章url前面的域名了。
+4. 将`disqus_config`修改完成后将通用代码粘贴到_includes下的disqus.html里
 
 5. 除了通用代码，还可以发现下面还带了如何显示评论数的代码标签：
 

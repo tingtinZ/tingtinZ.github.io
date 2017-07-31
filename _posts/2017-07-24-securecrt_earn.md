@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 使用securecrt连接虚拟机内的 Ubuntu 系统
-category: securecrt
+title: 使用SecureCRT连接虚拟机内的 Ubuntu 系统
+category: SecureCRT
 descriptions: 与虚拟机内的Ubuntu系统用ip和端口相连接，实现在宿主机上的终端仿真。
-keywords: securecrt, ssh
+keywords: SecureCRT, ssh
 ---
 
 ## 关于securecrt

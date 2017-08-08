@@ -39,7 +39,7 @@ Connection timed out
 
 ### 解决
 
-`Options` ---->`Session Options`---->  `Apperance` ----> `Fonts` ----> `Character`
+`Options` ---->`Session Options` ---->  `Apperance` ----> `Fonts` ----> `Character`
 
 ### 效果
 

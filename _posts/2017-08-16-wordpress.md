@@ -11,10 +11,10 @@ keywords: wordpress
 ### 1.安装mysql
 
 ```
-$ sudo apt-get install mysql-server
+$ sudo apt-get install mysql-server mysql-client
 ```
 
-安装完后新建wordrress数据库：
+安装完后新建wordrress数据库（为后面的wordpress博客做准备）：
 
 ```
 $ sudo mysql -u root -p
@@ -37,9 +37,17 @@ Query OK, 1 row affected (0.00 sec)
 
 ### 2.安装apache2
 
-（之前已安装）
+```
+$ sudo apt-get install apache2
+```
 
 ### 3.安装PHP
+
+```
+$ sudo apt-get install php7.0
+```
+
+将apache2与php作关联：
 
 ```
 $ sudo apt-get install libapache2-mod-php7.0
@@ -63,12 +71,10 @@ phpinfo();
 
 在浏览器中输入ip/blogpark.php，若出现相应的正确页面，则成功。
 
-### 4.配置php和mysql
+将php与mysql作关联：
 
 ```
-$ sudo apt-get install php7.0-mysql
-$ sudo apt-get install php7.0-gd
-$ sudo apt-get install php7.0-curl
+$ sudo apt-get install php7.0-mysql php7.0-gd php7.0-curl
 ```
 
 重启apache2服务器
@@ -77,7 +83,7 @@ $ sudo apt-get install php7.0-curl
 $ service apache2 restart
 ```
 
-### 5.安装wordpress
+### 4.安装wordpress
 
 下载wordpress
 
@@ -105,7 +111,7 @@ $ sudo chown www-data:www-data -R /var/www
 
 然后浏览器访问ip/wp-admin/setup-config.php，就可以看到wordpress页面了。
 
-### 6.wordpress设置
+### 5.wordpress设置
 
 在出现的wordpress页面会提示设置，跟着步骤走
 

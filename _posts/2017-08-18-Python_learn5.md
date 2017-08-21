@@ -2,8 +2,8 @@
 layout: post
 title: Python学习5
 category: Python
-descriptions:Python
-keywords:Python 
+descriptions: Python
+keywords: Python
 ---
 
 学习自《像计算机科学家一样思考Python+(第2版)》。

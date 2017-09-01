@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="Linux学习小记2, 婷婷的博客, ">
+  <title>Linux学习小记2 - 婷婷的博客</title>
+  <link rel="canonical" href="https://tingtinZ.github.io/2017/07/26/Linux_learn2.html">
+  <link rel="icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/res/css/public.css">
+  <link rel="stylesheet" href="/res/css/light.css">
+  <script src="/res/js/light.js"></script>
+  <!-- <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script> -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88258580-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+  <div id="blog">
+    <div class="sidebar">
+  <div class="profilepic">
+    <a href="/"><img src="/res/img/me.jpg" alt="logo"></img></a>
+  </div>
+  <h1 class="title"><a href="/">婷婷的博客</a></h1>
+  <h2 class="sub-title"></h2>
+  <nav id="nav">
+    <ul>
+    
+      <li><a href="/page/timing.html"><i class="fa fa-clock-o"></i>&nbsp;时间轴</a></li>
+    
+      <li><a href="/page/category.html"><i class="fa fa-tags"></i>&nbsp;分类</a></li>
+    
+      <li><a href="/page/read.html"><i class="fa fa-book"></i>&nbsp;阅读</a></li>
+    
+      <li><a href="/page/about.html"><i class="fa fa-paper-plane-o"></i>&nbsp;关于</a></li>
+    
+    </ul>
+  </nav>  
+  <nav id="sub-nav">
+    <a class="weibo " href="" title="新浪微博" target="_blank"><i class="fa fa-weibo"></i></a>
+    <a class="github" href="https://github.com/tingtinZ" title="GitHub" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    <a class="rss" href="/page/feed.xml" title="RSS订阅" target="_blank"><i class="fa fa-rss"></i></a>
+    <a class="search" href="/page/search.html" title="搜索" target="_blank"><i class="fa fa-search"></i></a>
+  </nav>
+  <div id="license">
+    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="本站所有作品采用：&#10;知识共享《署名 非商业性使用 相同方式共享 3.0》&#10;进行许可" >
+    <img alt="License" height="31" width="88" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK8AAACvABQqw0mAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAqVSURBVGiB7VptbFPXGX7utYlGJzz/2yYHYYQ2xZFWHAq0dLSx161TS9NcL4FCQ4fNtLYr65KUELaRLwOBxoQ6Hv3QpjX22lWtVirM19qFDt8QtDhxEpvR4vxYZaMkKtWmOThoKvHHux/X98SO7cShbHSsj3R0j8/Hc899znu+3mOOiFQcx13FF7jpICKOA0AAcLrnFHieB8/zUCgU4HkFFDwPXpF68jw4jgfPceA4DuA4mQUEAiUJSUoimZRCIpGQnskEEokkkskEy0tSkpUnIrkxLH47YGPlJgAAB4BkcRUKhRR4xUxcoZDyeEVKZA4cx6frmxInJWxSEjORSIX0eCJT5GQyyYRNF/p2wcbKTVACyBRXoYQy4ymFk8dPwePxYHBwEFPRqQyiJaolWLt2LYzfMaLi0UeQSCrA83GpQxI8OHCQ+nIGlCRpJADSGOIkcUd8frjfcSMYDGaU1+l0EKoErFpTVtDHfV54OAD0p7PvQalUMlGVSqUUFEr0iudge96GiYmJghqk0WjQ+ItGlJffj3gigUQijng8FRJxxOMJZuHplvzxxMc40vUiRoOjAACDwQC9Xg8ACAQCEEURAFCiK8GO2h342te/mvP9Vz7+BC85Xvpc8Gys3CQJ/H7vGSgVyhlhlYuwSKlEa3Mb3MfcrIJarYYgCNBqtSgvLwcA9Pb2IhwOw+12Y3JykpUVTAIaGndi8R2LEY/HEYvHEY/HEI/HM6cMSuJq5Cp++vSziEajEAQBdrsdWq02o7HhcBj19fVwu91QqVRot7VnfdS16DXU7qj73PDI8zCd7TtLff3nqN/XT0MBH134IECCSSBIg5fUajW1tbVRJBKhueB0OkmtVrN6JboSOt/fR0OBIfIO9VNf/zny9J2lM2IPvffnd+l0zyk68e5x0ul0BIDMZnMGn8wz+x0y99vH/5ARSnQlOXkcdjs9/tjmz8QzNjZG3v5+8vb309jYWEE8AIgHAEVqDlYqFFAqMi1Xr9fD7/ejtbUVarU6axikw2w2IxQKsaE0GhxFp+1wxlzOsx2JtBvxeX0IBoMQBAGNu3bNyS+/QxAEjAZHMeLzs/QRnx+jwVGsKivDvfesY+m/6urC8zYbTp4+jd0NuzA+Pl4QT3p7fv/aazCsvw81m7egZvMWGNbfhzM9PXPypIP6vH3kHfLSyIVhchxxMMvR6/XzWm0uRCIR0uv1jMfxooNG/jpCA8NeOu/tI895yYrfff+PpCuVrDcUChXMHwqFCADpdDpmLfIoKPnGN2nFMi2Vf3s9Pf3jJwkAtbW10cEDBwkAHX377YJ45PZ4+/slvrvX0Y+2WahxZwOtWKalFcu05LDb8/LksGDJim3P2wBI863T6ZzXanNBrVbD4/GwuraDttReOmXBXGpPzfMIXgrCYDBkzXEWi4VZucViycjTarUwGAwZK3swKPFUVFRg46ZNGB8fx5meHqxYpsW/pq5h6xNbcenDD1FVXV0Qj1arRTQaRdB/EQBQKfwAv3V1o6PzEPa0NAMAXN3OvDwyeACpYSttxeTdQl1dHRvqNwK1Wg273Q4AmJiYwMkTp9iBRRKZY9u0XO9xuVw54zJy1dHr9bAd7sRBWwfeeOtNVFVX46PLYdgOd2Lp0qVwdTsRvHSpIB4Z7S9IBveb373K0r734IMAgGg0ik+uXMnLA6QElq3J4/EAkMSpra1lhURRhMlkgtFohNFohNVqzZvX1dXF8sxmM7Niz1lPmvVy4PgZgf8TuPuee9DReQhjY2No3NmAsm/diXeOHkXFwxtQs3kLm0PngkqlgsPhwB2qJXjllVdylvn00+tzckgHDY4Dz3EYHBwEAAiCwIQRRRFGozGjkiiKEEURtbW1MJlMWXkXLlyA0+lkXC6XC4ODg9IJMCWsJK4kcCAQyGqY2Wxmlms2m7Pyc9WZnRaNRnGmpwcdnYdgvmRBxcMbAAADXi8GvF4UFxeDW6Sck2eRUonGhgbcsXgxSxvwell8mXZZ3vYAzIKlD5ZPaCtXrmQF6uvrAUjzTCgUgsfjgVarxbZt25gl6/V6hEIhHDt2LGOPDIDFp6JT0nvApT2B0tJSiKKIcDic0TC5g2bHAWkPKooidDodS9PpdFk8P3nyKbTv3YdVd65EzeYt+OhyGFXV1ejoPISarVsL4hkfH0dbSysef2wz2vfuQ/vefWhpagIA7Nq9O297MgQGh4zhmj6fyD1jNpvZZB4KhWA2m1mefPgQBIHlyUhfvCSjzTw2b3xMWnTkjiwEclmhSmBpcjydp6PzECzbt+PKP/6Ov4VCcNjt2NPSjKrqalj370PZmtXz8li2b4dl+3YAgLO7G87ublz/9Do2VDyCLTWP522PjOzx8V/GuvXroCvVwe12w2KxZFnrbMinpxJdSYYfYNWaMpToSjJ4iouLsaelGV9avBgjw8P4WV3dDfHsaWnG9x96CJcvhwFIo05XWjonjwzJginTi5U+n8jW7HK5MDk5iUAggOXLl8NqtbI8+ZicnicjfchKZzN5ezyD5rZmqFQquFwumEwmVofSvGzhcBgmkwldXV1QqVTYUbsj62N2/7IxJ8/OXQ144603PxPP6jWrUVVdjarqauhKSwviAVLOHt/IIIqKirD+3vswFZ2C2WxmluR2u7MWMkCaMiorK/PmyfXr6+vR1dWFJaolOP+XPkxPT2M6No1YPIZYLC45gxJxRP45iQPWA2wvqdfrodfroVarIYoi6/T5nDTXotfQccDGnDS3koc5ewaGB1BUVARrixXuY26o1WpEIhFWUBRFOBwO5swxGAxobW1lHeBwOFjZ9DwAWL58OcLhMB747gM4bO/E9elpxGYJLPuNk4kkfAM+HDt6692MN4OHCewd6seiRUU4f+48ap+V9r92ux11aXPWjcDlcrFT2P4D+/HwhocwHZvGdCyGeCyGWHyWwDkc8P/L2Fi5SZqD5Ssdg7EcGo0GAGC1WrO2TgvB5OQkW101Gk3KEZ+6xUgmkUzNxZS6crpdwQNAkpJIJKR7tH3tewFIAplMpgwfb6GYnJyE0WhkdRt/3physCdmRE67MmKL7KzF9nYBAaCm1ibyjQxS4KKfnvjhExkeNb/fvyBPV7onTTAJFLjoJ9/IIO1t38vS/4/CzI+652ppyO+jwA043CORCLW1tWU43NesXUMXPgjQUMBHTa1Nt/pDb0lg1/YymlubUGkSoFQqcdh2GK+/9jrLW+iVkXVfG+LxOAYGBvHMU89gPqRPD/LJkogyTpmzf+fjyVdHfkehjqZ8bVoQx+zQ3NokWfJFP3W7XiWNRlNwj2k0GnIccVDgop+GAj56+dcvF1yXiOaMp6fNxzNf/UK4cpVZKEeWBcuoe64WNVtr2FWP6OnFieMn5ry2f1R4FAZDObvQPH78BPZb9xfQxxJyWUt63kKsjuO4vM+FYLa1zl6E5+PLKzAArLqrDM2tLSheqkm7jUh3NyJj3yr/8WRifBwvdNpxrvfcgj/ms0wN+XgAZAm8ULFzdVIhHHMKLOP+8vuxoWID7lp9F76iUqX+OiW/WXrR1WgUw0PDOH3y9IKFTf8I1rCbYMG5fi9k/pxvTbhpAn+BGwdPRF++1Y24XUFE3L8BbcIUMlzaN08AAAAASUVORK5CYII=" /></a>
+  </div>
+</div>
+
+    <div class="main">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2017/07/26/Linux_learn2.html">Linux学习小记2</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+    2017年07月26日
+    <i class="space"></i>
+    
+    <i class="fa fa-tags"></i>
+    <a class="post-category" href="/page/category.html#Linux">Linux</a>
+    
+    
+    <a class="post-category" href="/page/category.html#"></a>
+    
+  </p>
+</header>
+<div class="post-main">
+<p>继昨天学习了Linux的历史简介、特色、与硬件的联系后，今天学习的重点会放在shell部分。</p>
+
+<p>像我们平时的命令行，其实真正指的shell。</p>
+
+<!-- more -->
+
+<h2 id="shell提示符">shell提示符</h2>
+
+<p>在大多时候，关注的是命令本身，却没有去注意过命令前面的提示符是什么，又是怎么组成的。</p>
+
+<p>打开终端我们总是能看见shell提示符：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>zhuangtingting@zhuangtingting-VirtualBox:~$
+</code></pre>
+</div>
+
+<p>不同的发行版可能显示有所不同，但是通常会包括用户名@主机名，当前工作目录和美元符号”$”。</p>
+
+<p>在以往的实践中可以发现，当获得root权限的时候，”$”会变成”#”。</p>
+
+<p>为突出命令，以下的命令将会省略shell提示符。</p>
+
+<h2 id="快捷操作">快捷操作</h2>
+
+<p>为减少输入命令的负担，这里有一些快捷的操作，让我们更快捷更轻松得编辑命令。</p>
+
+<ul>
+  <li>
+    <p>命令历史。</p>
+
+    <p>按上箭头按键，会看到上一条命令重新出现在提示符之后。按下下箭头按键，先前输入的命令就消失了。（在不小心输错命令的某些字母的时候，这简直是福音！）</p>
+  </li>
+  <li>
+    <p>复制和粘贴</p>
+
+    <p>与平常不同的是，在终端里面，使用<code class="highlighter-rouge">ctrl+c</code>和<code class="highlighter-rouge">ctrl+v</code>是不能完成复制粘贴的，它们有着不一样的意义（例如<code class="highlighter-rouge">ctrl+c</code>是向终端发送signal信号来终止一个进程或任务）。</p>
+
+    <p>还是有办法进行复制粘贴的，这时候<code class="highlighter-rouge">shift+ctrl+c</code>和<code class="highlighter-rouge">shift+ctrl+v</code>就可以实现。</p>
+
+    <p>还有一种方法利用鼠标和光标，鼠标左键的拖动（或双击）使某些文本高亮，再按下鼠标中键，就被粘贴在了光标所在的位置。（这个方法我在securecrt里实践过，并不奏效，但是在linux下的终端是可行的。）</p>
+  </li>
+  <li>
+    <p>命令补全</p>
+
+    <p>输入命令的前个别字母后，<code class="highlighter-rouge">tab</code>键可以帮助我们自动补全命令。</p>
+  </li>
+  <li>
+    <p>光标移动</p>
+
+    <p><code class="highlighter-rouge">ctrl+a</code>移动光标到行首；<code class="highlighter-rouge">ctrl+e</code>移动光标到行尾；<code class="highlighter-rouge">ctrl+u</code> 删除整行；<code class="highlighter-rouge">ctrl+d</code> 删除单词。</p>
+  </li>
+</ul>
+
+<h2 id="通配符">通配符</h2>
+
+<p>shell提供一些特殊字符来帮助我们快速得根据指定文件名而不需要把文件名的全称输入进去。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">*</code> 匹配任意多个字符</li>
+  <li><code class="highlighter-rouge">?</code> 匹配任意一个字符（不能是0个）</li>
+  <li><code class="highlighter-rouge">[characters]</code> 匹配任意一个字符集中的字符</li>
+  <li><code class="highlighter-rouge">[!characters]</code> 匹配任意一个字符集中的字符</li>
+  <li><code class="highlighter-rouge">[[:class:]]</code> 匹配任意一个不是字符集中的字符</li>
+</ul>
+
+<p>例如，在我的家目录下有文件error.txt和ddes.txt，我使用<code class="highlighter-rouge">cat</code>命令：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cat *.txt
+ddes
+error
+</code></pre>
+</div>
+
+<p>那么两个文件名都能够被匹配，该命令把两个文件的内容都打印出来了。</p>
+
+<h2 id="文件系统树">文件系统树</h2>
+
+<p>需要注意的是，Linux只有一个单一的文件系统树，而各个存储设备是挂载到树的各个节点上。比如，存储设备1是挂载到根目录，存储设备 2则是挂载到/home这个目录。当数据放置在/home内的各次目录时，数据是放置到存储设备 2的，如果不是放在/home底下的目录， 那么数据就会被放置到存储设备1。</p>
+
+<h2 id="io重定向">I/O重定向</h2>
+
+<ul>
+  <li>
+    <p>重定向标准输出</p>
+
+    <ul>
+      <li>使用 “&gt;” 重定向符来重定向标准输出到另一个文件。</li>
+      <li>使用”»“操作符，将导致输出结果添加到文件内容之后。</li>
+    </ul>
+
+    <p>有一个很简便的功能，我们能够利用标准输出很简单得生成一个文件：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ &gt; f1.txt
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>重定向标准输入</p>
+
+    <p>使用“&lt;”重定向符实现标准输入，以此可把标准输入源改成文件，不再仅仅是键盘。</p>
+  </li>
+</ul>
+
+<h2 id="管道线">管道线</h2>
+
+<p>使用管道操作符<code class="highlighter-rouge">|</code>，可以使得一个命令的标准输入通过管道送至另一个命令的标准输出。例如：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ll | sort
+</code></pre>
+</div>
+
+<h2 id="常用命令">常用命令</h2>
+
+<p>文件系统相关命令：</p>
+
+<ul>
+  <li>
+    <p>pwd`显示当前路径</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cd</code>  更改路径，后面可以接相对路径或绝对路径（家目录用字符“~”代表），也有如下的快捷键：</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">cd</code> 更改工作目录到家目录</li>
+      <li><code class="highlighter-rouge">cd -</code>更改目录到先前的工作目录</li>
+      <li><code class="highlighter-rouge">cd ~user_name</code> 更改目录到指定用户的家目录</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">ls </code> 列出目录下的内容，后面可以接相对路径或绝对路径，接上不同选项有不同的功能（可以接多个），常见的有：</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">ls -a</code> 显示所有文件把隐藏目录也显示出来</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">ls -l</code> 长格式输出信息，包括权限、用户、文件大小、修改日期、文件名等信息</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">ls -t </code>按文件修改时间来排序</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">ls -S</code> 按照文件大小排序</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">ls -d</code> 显示的是指定目录，而不是目录中的内容</p>
+
+        <p>与<code class="highlighter-rouge">ls</code>比较一下，能理解得更清楚：</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>$ ls tingtin
+404.html                      css           index.html  Rakefile
+about.md                      feed.xml      js          README.md
+archive.html                  Gemfile       _layouts    _site
+baidu_verify_d9VfWOoEUA.html  Gemfile.lock  love        sketch-web-viewer
+CNAME                         images        nano.save   tags.html
+_config.yml                   _includes     _posts      小说.html
+
+$ ls -d tingtin
+tingtin
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">ls -F</code> 在每个所列出的名字后面加上一个指示符。例如，如果 目录名，则会加上一个’/’字符。</p>
+
+        <p>需要注意的是，这里的大写是必须要的，如果输入的命令是<code class="highlighter-rouge">ls -f</code>则会去掉颜色标记。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">file</code> 确定文件类型，后面接文件名</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">less</code> 浏览文件内容</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cp</code> 复制文件和目录，这里有一些有用的选项：</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">cp -u</code> 仅复制目标目录中不存在的文件，或者是文件内容相比已存在的文件有更新的文件。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">cp -a</code> 复制文件和目录，以及它们的属性。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">cp -r</code> 递归地复制目录及目录中的内容。</p>
+
+        <p>一般情况下，如果目标是个文件，那么目标文件不存在时会创建文件；而如果目标是个目录时，目标目录必须在复制前就已经存在。但是有了<code class="highlighter-rouge">-r</code> 这个选项后，如果目标目录不存在，则会创建目标目录。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">mv</code> 移动/重命名文件和目录。（移动目标是个目录时，可以不存在。）</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">mkdir</code>创建目录（可以接受多个参数，即一次创建多个目录）</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">rm</code> 删除文件和目录</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">rm -r</code> 如果要删除一个目录，则要指定这个选项。</li>
+    </ul>
+
+    <p>需要注意的是，若在<code class="highlighter-rouge">rm</code> 命令中使用通配符不当，将可能删除所有的文件！例如在“*”后面加了一个空格：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ ls
+f1.txt  f2.txt  h1.html
+$ rm *.txt
+$ ls
+h1.html
+
+$ ls
+f1.txt  f2.txt  h1.html
+$ rm * .txt
+rm: cannot remove '.txt': No such file or directory
+$ ls
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">ln</code> 创建硬链接和符号链接</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>与命令相关的：</p>
+
+<ul>
+  <li>
+    <p>type` 显示命令类型</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">which</code> 显示可执行程序的位置，不包括<code class="highlighter-rouge">cd</code>等内建命令和命令别名。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">help</code> 得到shell内建命令的帮助文档</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">man</code> 显示程序手册页</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">whatis</code> 相比冗长的手册页，我们可以用这个命令显示简洁的命令说明</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">alias</code> 创建自己的命令，用<code class="highlighter-rouge">unalias</code> 删除别名。</p>
+
+    <p>注意！在创建之前用<code class="highlighter-rouge">type</code> 查看命令是否已存在。</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">cat</code> 连接文件，用来显示文件内容（没有分页）。</p>
+  </li>
+  <li><code class="highlighter-rouge">sort</code> 排序文本行</li>
+  <li><code class="highlighter-rouge">uniq</code>  报道或省略重复行</li>
+  <li><code class="highlighter-rouge">grep</code> 打印匹配行，匹配文件名是否还有某个单词</li>
+  <li><code class="highlighter-rouge">wc</code> 打印文件中行数，单词数，和字节数</li>
+  <li><code class="highlighter-rouge">head</code> 输出文件第一部分
+    <ul>
+      <li><code class="highlighter-rouge">head -n</code>调整打印的行数</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">tail</code> 输出文件最后一部分
+    <ul>
+      <li><code class="highlighter-rouge">tail -n</code> 调整打印的行数</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">tee</code>  从标准输入读取数据，并同时写到标准输出和文件</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">echo</code> 显示一行文本</p>
+
+    <p>在这里我想到既然能够显示后面所接的文本，那么可以用来配合重定向符号来写文件：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ echo dsfdsaf &gt; error.txt
+$ cat error.txt
+dsfdsaf
+</code></pre>
+    </div>
+
+    <p>还能用来作路径名展开，例如：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ echo d*
+data ddes.txt
+</code></pre>
+    </div>
+
+    <p>能找到在当前目录下文件名或目录名以d开头的有两个。</p>
+
+    <p>另外，还能执行算术表达式，并显示结果，算数表达式的格式：$((expression))：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ echo $((8/2))       
+4
+</code></pre>
+    </div>
+
+    <p>在学习过程中，新get到一个算数操作符“**”，执行取幂操作。</p>
+
+    <p>有一个我比较易错的点是：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ echo {Z..A}
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+</code></pre>
+    </div>
+
+    <p>在上面的操作中，如果换作其他操作，会误以为是取花括号中的一个。但实际上花括号这样的功能确实带来了极大的便利，给人一种“批量处理”的感觉。</p>
+
+    <p>有些时候，我们希望不要展开，我们可以使用双引号和单引号。有所区别的是，双引号下参数展开、算术表达式展开和命令替换仍然有效，但是单引号可以禁止所有的展开！</p>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">clear</code> 清空屏幕</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">history</code> 显示历史列表内容</p>
+
+    <p>在历史列表中这么多命令里怎么找出我们想要的命令呢？还记得<code class="highlighter-rouge">grep</code> 命令吗，配合管道线，我们能轻松搜索到我们想要的命令：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ history | grep cat
+</code></pre>
+    </div>
+
+    <p>像上面这样，我们可以找到我们用过的<code class="highlighter-rouge">cat</code> 命令。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">date </code> 显示系统当前时间和日期</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cal</code> 显示当前月份的日历</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">df </code> 查看磁盘剩余空间的数量</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">free </code> 显示空闲内存的数量</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">exit</code> 终止一个终端会话</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>权限相关：</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">id</code> 显示用户信息</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">passwd</code> 修改用户密码</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">chmod</code> 更改文件权限（文件所有者（u）、文件组所有者（g）和其他人（o）的读、写和执行权限）</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">umask</code> 设置默认的文件权限</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">su</code> 以另一个用户的身份来运行 shell</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">sudo</code> 以另一个用户的身份来执行命令</p>
+
+    <p>su 和 sudo 之间的一个重要区别是 sudo 不会重新启动一个 shell，也不会加载另一个 用户的 shell 运行环境。</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>进程相关：</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">ps</code> 报告当前进程</p>
+
+    <p>默认情况下，只列出与当前终端会话相关的进程，如果想得到更多的进行信息，加上选项：</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">ps x</code> 列出所拥有的每个进程的信息</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">top</code> 显示任务</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">kill </code>给一个进程发送信号，后面接上“-9”和进程的PID，常用来“杀死”进程。当然还有其他信号。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">shutdown</code> 关机或重启系统</p>
+  </li>
+</ul>
+
+<h2 id="学习中遇到的问题">学习中遇到的问题</h2>
+
+<h3 id="问题1超级用户和root用户的区别">问题1：超级用户和root用户的区别？</h3>
+
+<p>解答：超级用户即为root用户。</p>
+
+<h3 id="问题2su-和-sudo-之间的一个重要区别是-sudo-不会重新启动一个-shell也不会加载另一个-用户的-shell-运行环境不是很懂">问题2：su 和 sudo 之间的一个重要区别是 sudo 不会重新启动一个 shell，也不会加载另一个 用户的 shell 运行环境？不是很懂</h3>
+
+<p>解答：sudo只是临时获得root权限，但却不会重新启动shell，而su 命令以另一个用户身份的 ID 启动一个新的 shell 会话。</p>
+
+<h3 id="待了解">待了解</h3>
+
+<p>umask、进程、su VS su-、</p>
+
+<ol>
+  <li>掩码：掩码和chmod的权限值一样，都用八进制都表示。umask总共4位：gid/uid，属主，组权，其它用户的权限。通常用后三位，第一位是较少用到的权限设置：setuid（4000）、setgid（2000）、sticky（1000）。
+需要特别注意！！！umask 的分数指的是『该默认值需要减掉的权限！』
+创建文件时：(-rw-rw-rw-) 再减掉拿走的权限
+创建目录时：(drwxrwxrwx) 再减掉拿走的权限</li>
+  <li><code class="highlighter-rouge">umask</code> VS <code class="highlighter-rouge">chmod</code>：umask是用户创建文件的默认权限，对将要新创建的新文件有影响。chmod是修改文件的权限！</li>
+  <li>进程好比如任务，正在运行的一个应用程序。进程是程序的实例，通过运行触发程序，加载到内存中成为进程。</li>
+  <li>su VS su-。su和sudo没有切换工作目录和环境变量,只是赋予用户权限,而su -是真正切换到root登录,工作目录切换到/root,环境变量也同时改变。正因为这样，su -使用root的密码,而sudo su使用用户密码。</li>
+</ol>
+
+</div>
+<div class="share">
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+  </div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/res/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+<div class="pagination">
+
+<a class="pagination-item newer" href="/2017/07/25/Linux_learn.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Linux学习小记</a>
+
+
+<a class="pagination-item older" href="/2017/07/27/Linux_learn3.html">Linux学习小记3&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+<!-- 使用多说评论-->
+<style>#ds-reset .ds-avatar, #ds-reset .ds-avatar img{border-radius:50%;}</style>
+<script type="text/javascript">var duoshuoQuery = {short_name:"tingtinZ"};(function(){var ds = document.createElement('script');ds.type = 'text/javascript';ds.async = true;ds.src = '/res/js/embed.js';ds.charset = 'UTF-8';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>
+<div class="comments">
+  <div class="ds-thread" data-title="Linux学习小记2" data-thread-key="/2017/07/26/Linux_learn2" data-url="https://tingtinZ.github.io/2017/07/26/Linux_learn2.html"></div>
+</div> 
+
+<!-- 使用disqus评论-->
+
+  <div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = "https://tingtinZ.github.io/2017/07/26/Linux_learn2.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tingtinz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script id="dsq-count-scr" src="//zshmobi.disqus.com/count.js" async></script>
+  
+
+
+    
+    </div>
+  </div>    
+  <div id="top"><a id="rocket" href="javascript:;" title="返回顶部"><i></i></a></div>
+  
+</body>
+</html>

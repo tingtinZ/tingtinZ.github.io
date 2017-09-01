@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="Linux学习小记4, 婷婷的博客, ">
+  <title>Linux学习小记4 - 婷婷的博客</title>
+  <link rel="canonical" href="https://tingtinZ.github.io/2017/07/31/Linux_learn4.html">
+  <link rel="icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/res/css/public.css">
+  <link rel="stylesheet" href="/res/css/light.css">
+  <script src="/res/js/light.js"></script>
+  <!-- <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script> -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88258580-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+  <div id="blog">
+    <div class="sidebar">
+  <div class="profilepic">
+    <a href="/"><img src="/res/img/me.jpg" alt="logo"></img></a>
+  </div>
+  <h1 class="title"><a href="/">婷婷的博客</a></h1>
+  <h2 class="sub-title"></h2>
+  <nav id="nav">
+    <ul>
+    
+      <li><a href="/page/timing.html"><i class="fa fa-clock-o"></i>&nbsp;时间轴</a></li>
+    
+      <li><a href="/page/category.html"><i class="fa fa-tags"></i>&nbsp;分类</a></li>
+    
+      <li><a href="/page/read.html"><i class="fa fa-book"></i>&nbsp;阅读</a></li>
+    
+      <li><a href="/page/about.html"><i class="fa fa-paper-plane-o"></i>&nbsp;关于</a></li>
+    
+    </ul>
+  </nav>  
+  <nav id="sub-nav">
+    <a class="weibo " href="" title="新浪微博" target="_blank"><i class="fa fa-weibo"></i></a>
+    <a class="github" href="https://github.com/tingtinZ" title="GitHub" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    <a class="rss" href="/page/feed.xml" title="RSS订阅" target="_blank"><i class="fa fa-rss"></i></a>
+    <a class="search" href="/page/search.html" title="搜索" target="_blank"><i class="fa fa-search"></i></a>
+  </nav>
+  <div id="license">
+    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="本站所有作品采用：&#10;知识共享《署名 非商业性使用 相同方式共享 3.0》&#10;进行许可" >
+    <img alt="License" height="31" width="88" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK8AAACvABQqw0mAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAqVSURBVGiB7VptbFPXGX7utYlGJzz/2yYHYYQ2xZFWHAq0dLSx161TS9NcL4FCQ4fNtLYr65KUELaRLwOBxoQ6Hv3QpjX22lWtVirM19qFDt8QtDhxEpvR4vxYZaMkKtWmOThoKvHHux/X98SO7cShbHSsj3R0j8/Hc899znu+3mOOiFQcx13FF7jpICKOA0AAcLrnFHieB8/zUCgU4HkFFDwPXpF68jw4jgfPceA4DuA4mQUEAiUJSUoimZRCIpGQnskEEokkkskEy0tSkpUnIrkxLH47YGPlJgAAB4BkcRUKhRR4xUxcoZDyeEVKZA4cx6frmxInJWxSEjORSIX0eCJT5GQyyYRNF/p2wcbKTVACyBRXoYQy4ymFk8dPwePxYHBwEFPRqQyiJaolWLt2LYzfMaLi0UeQSCrA83GpQxI8OHCQ+nIGlCRpJADSGOIkcUd8frjfcSMYDGaU1+l0EKoErFpTVtDHfV54OAD0p7PvQalUMlGVSqUUFEr0iudge96GiYmJghqk0WjQ+ItGlJffj3gigUQijng8FRJxxOMJZuHplvzxxMc40vUiRoOjAACDwQC9Xg8ACAQCEEURAFCiK8GO2h342te/mvP9Vz7+BC85Xvpc8Gys3CQJ/H7vGSgVyhlhlYuwSKlEa3Mb3MfcrIJarYYgCNBqtSgvLwcA9Pb2IhwOw+12Y3JykpUVTAIaGndi8R2LEY/HEYvHEY/HEI/HM6cMSuJq5Cp++vSziEajEAQBdrsdWq02o7HhcBj19fVwu91QqVRot7VnfdS16DXU7qj73PDI8zCd7TtLff3nqN/XT0MBH134IECCSSBIg5fUajW1tbVRJBKhueB0OkmtVrN6JboSOt/fR0OBIfIO9VNf/zny9J2lM2IPvffnd+l0zyk68e5x0ul0BIDMZnMGn8wz+x0y99vH/5ARSnQlOXkcdjs9/tjmz8QzNjZG3v5+8vb309jYWEE8AIgHAEVqDlYqFFAqMi1Xr9fD7/ejtbUVarU6axikw2w2IxQKsaE0GhxFp+1wxlzOsx2JtBvxeX0IBoMQBAGNu3bNyS+/QxAEjAZHMeLzs/QRnx+jwVGsKivDvfesY+m/6urC8zYbTp4+jd0NuzA+Pl4QT3p7fv/aazCsvw81m7egZvMWGNbfhzM9PXPypIP6vH3kHfLSyIVhchxxMMvR6/XzWm0uRCIR0uv1jMfxooNG/jpCA8NeOu/tI895yYrfff+PpCuVrDcUChXMHwqFCADpdDpmLfIoKPnGN2nFMi2Vf3s9Pf3jJwkAtbW10cEDBwkAHX377YJ45PZ4+/slvrvX0Y+2WahxZwOtWKalFcu05LDb8/LksGDJim3P2wBI863T6ZzXanNBrVbD4/GwuraDttReOmXBXGpPzfMIXgrCYDBkzXEWi4VZucViycjTarUwGAwZK3swKPFUVFRg46ZNGB8fx5meHqxYpsW/pq5h6xNbcenDD1FVXV0Qj1arRTQaRdB/EQBQKfwAv3V1o6PzEPa0NAMAXN3OvDwyeACpYSttxeTdQl1dHRvqNwK1Wg273Q4AmJiYwMkTp9iBRRKZY9u0XO9xuVw54zJy1dHr9bAd7sRBWwfeeOtNVFVX46PLYdgOd2Lp0qVwdTsRvHSpIB4Z7S9IBveb373K0r734IMAgGg0ik+uXMnLA6QElq3J4/EAkMSpra1lhURRhMlkgtFohNFohNVqzZvX1dXF8sxmM7Niz1lPmvVy4PgZgf8TuPuee9DReQhjY2No3NmAsm/diXeOHkXFwxtQs3kLm0PngkqlgsPhwB2qJXjllVdylvn00+tzckgHDY4Dz3EYHBwEAAiCwIQRRRFGozGjkiiKEEURtbW1MJlMWXkXLlyA0+lkXC6XC4ODg9IJMCWsJK4kcCAQyGqY2Wxmlms2m7Pyc9WZnRaNRnGmpwcdnYdgvmRBxcMbAAADXi8GvF4UFxeDW6Sck2eRUonGhgbcsXgxSxvwell8mXZZ3vYAzIKlD5ZPaCtXrmQF6uvrAUjzTCgUgsfjgVarxbZt25gl6/V6hEIhHDt2LGOPDIDFp6JT0nvApT2B0tJSiKKIcDic0TC5g2bHAWkPKooidDodS9PpdFk8P3nyKbTv3YdVd65EzeYt+OhyGFXV1ejoPISarVsL4hkfH0dbSysef2wz2vfuQ/vefWhpagIA7Nq9O297MgQGh4zhmj6fyD1jNpvZZB4KhWA2m1mefPgQBIHlyUhfvCSjzTw2b3xMWnTkjiwEclmhSmBpcjydp6PzECzbt+PKP/6Ov4VCcNjt2NPSjKrqalj370PZmtXz8li2b4dl+3YAgLO7G87ublz/9Do2VDyCLTWP522PjOzx8V/GuvXroCvVwe12w2KxZFnrbMinpxJdSYYfYNWaMpToSjJ4iouLsaelGV9avBgjw8P4WV3dDfHsaWnG9x96CJcvhwFIo05XWjonjwzJginTi5U+n8jW7HK5MDk5iUAggOXLl8NqtbI8+ZicnicjfchKZzN5ezyD5rZmqFQquFwumEwmVofSvGzhcBgmkwldXV1QqVTYUbsj62N2/7IxJ8/OXQ144603PxPP6jWrUVVdjarqauhKSwviAVLOHt/IIIqKirD+3vswFZ2C2WxmluR2u7MWMkCaMiorK/PmyfXr6+vR1dWFJaolOP+XPkxPT2M6No1YPIZYLC45gxJxRP45iQPWA2wvqdfrodfroVarIYoi6/T5nDTXotfQccDGnDS3koc5ewaGB1BUVARrixXuY26o1WpEIhFWUBRFOBwO5swxGAxobW1lHeBwOFjZ9DwAWL58OcLhMB747gM4bO/E9elpxGYJLPuNk4kkfAM+HDt6692MN4OHCewd6seiRUU4f+48ap+V9r92ux11aXPWjcDlcrFT2P4D+/HwhocwHZvGdCyGeCyGWHyWwDkc8P/L2Fi5SZqD5Ssdg7EcGo0GAGC1WrO2TgvB5OQkW101Gk3KEZ+6xUgmkUzNxZS6crpdwQNAkpJIJKR7tH3tewFIAplMpgwfb6GYnJyE0WhkdRt/3physCdmRE67MmKL7KzF9nYBAaCm1ibyjQxS4KKfnvjhExkeNb/fvyBPV7onTTAJFLjoJ9/IIO1t38vS/4/CzI+652ppyO+jwA043CORCLW1tWU43NesXUMXPgjQUMBHTa1Nt/pDb0lg1/YymlubUGkSoFQqcdh2GK+/9jrLW+iVkXVfG+LxOAYGBvHMU89gPqRPD/LJkogyTpmzf+fjyVdHfkehjqZ8bVoQx+zQ3NokWfJFP3W7XiWNRlNwj2k0GnIccVDgop+GAj56+dcvF1yXiOaMp6fNxzNf/UK4cpVZKEeWBcuoe64WNVtr2FWP6OnFieMn5ry2f1R4FAZDObvQPH78BPZb9xfQxxJyWUt63kKsjuO4vM+FYLa1zl6E5+PLKzAArLqrDM2tLSheqkm7jUh3NyJj3yr/8WRifBwvdNpxrvfcgj/ms0wN+XgAZAm8ULFzdVIhHHMKLOP+8vuxoWID7lp9F76iUqX+OiW/WXrR1WgUw0PDOH3y9IKFTf8I1rCbYMG5fi9k/pxvTbhpAn+BGwdPRF++1Y24XUFE3L8BbcIUMlzaN08AAAAASUVORK5CYII=" /></a>
+  </div>
+</div>
+
+    <div class="main">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2017/07/31/Linux_learn4.html">Linux学习小记4</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+    2017年07月31日
+    <i class="space"></i>
+    
+    <i class="fa fa-tags"></i>
+    <a class="post-category" href="/page/category.html#Linux">Linux</a>
+    
+    
+    <a class="post-category" href="/page/category.html#"></a>
+    
+  </p>
+</header>
+<div class="post-main">
+<p>上个星期六匆匆浏览了一遍鸟哥私房菜的第十、十一、十二、十三章（vim、BASH、正规表示法、Shell）后，也没有留下学习笔记和总结，今天重新看看了当时有些不懂的地方。有些地方多看几遍就恍然大悟（鸟哥的讲解还是比较通俗易懂的），但是还是有个别地方令我疑惑不解。</p>
+
+<!-- more -->
+
+<h3 id="notice">notice：</h3>
+
+<ul>
+  <li>
+    <p>如何得知目前的所有变量与环境变量的配置值？</p>
+
+    <p>环境变量用 env 或 export 而所有变量用 set 即可显示</p>
+  </li>
+  <li>
+    <p>我想要知道，在 /etc 底下，只要含有 XYZ 三个字节的任何一个字节的那一行就列出来，要怎样进行？</p>
+
+    <p>grep [XYZ] /etc/*</p>
+
+    <p>（当时看到这道题想到的是逐个判断包不包含 XYZ 三个字节，看了答案发现原来是如此简单！说明还是不够熟悉命令，实践不够。）</p>
+  </li>
+  <li>
+    <p>使用 sh -x 来进行程序的 debug真的很好用，当想检查语法错误时使用sh -n，没有错误时不显示信息。</p>
+  </li>
+  <li>
+    <p>必须要注意判断符号[]中括号的两端需要有空白字节来分隔，好几次练习中因为没有这样做使得执行程序的时候出现了错误。</p>
+  </li>
+  <li>
+    <p>在grep作搜索中， ^ 符号在字节集合符号(括号[])之内与之外是不同的！ 在 [] 内代表反向选择，在[]外代表定义在行首。</p>
+  </li>
+</ul>
+
+<h2 id="学习中出现的问题">学习中出现的问题</h2>
+
+<h3 id="q1">Q1.</h3>
+
+<h4 id="问题发现">问题发现：</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[zhuangtingting@ ~]$ pr f2.txt
+
+
+2017-07-31 10:37                      f2.txt                      Page 1
+
+
+dadsafdf
+(省略空白处)
+[zhuangtingting@ ~]$ pr f2.txt &gt; f2.txt
+[zhuangtingting@ ~]$ cat f2.txt
+[zhuangtingting@ ~]$ 
+</code></pre>
+</div>
+
+<p>以上代码中，我想实现的的是将pr处理过的内容标准输入到f2.txt中，但是这样做使得文件为空。但是把标准输出后面的f2.txt改成f3.txt，是可以实现成功的。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[zhuangtingting@ ~]$ cat f2.txt
+dsffd
+[zhuangtingting@ ~]$ pr f2.txt &gt;&gt; f2.txt
+[zhuangtingting@ ~]$ cat f2.txt
+dsffd
+
+
+2017-07-31 10:39                      f2.txt                      Page 1
+
+
+dsffd
+
+(省略空白部分)
+</code></pre>
+</div>
+
+<p>使用”»“测试，结果能成功，pr处理的内容接到了f2.txt文件原有内容的后面。</p>
+
+<h4 id="问题">问题：</h4>
+
+<p>为什么pr处理完却不能标准输出到原文件呢？</p>
+
+<p>解答：问题应该是又”&gt;”引起的，而不是pr命令。</p>
+
+<h3 id="q2">Q2.</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">read</span> -p <span class="s2">"Pleas input your birthday (MMDD, ex&gt; 0709): "</span> bir
+<span class="nv">now</span><span class="o">=</span><span class="sb">`</span>date +%m%d<span class="sb">`</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$bir</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"</span><span class="nv">$now</span><span class="s2">"</span> <span class="o">]</span>; <span class="k">then
+</span><span class="nb">echo</span> <span class="s2">"Happy Birthday to you!!!"</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$bir</span><span class="s2">"</span> -gt <span class="s2">"</span><span class="nv">$now</span><span class="s2">"</span> <span class="o">]</span>; <span class="k">then
+</span><span class="nv">year</span><span class="o">=</span><span class="sb">`</span>date +%Y<span class="sb">`</span>
+<span class="nv">total_d</span><span class="o">=</span><span class="k">$(($((</span><span class="sb">`</span>date --date<span class="o">=</span><span class="s2">"</span><span class="nv">$year$bir</span><span class="s2">"</span> +%s<span class="sb">`</span><span class="o">-</span><span class="sb">`</span>date +%s<span class="sb">`</span><span class="k">))</span><span class="o">/</span><span class="m">60</span><span class="o">/</span><span class="m">60</span><span class="o">/</span><span class="m">24</span><span class="k">))</span>
+<span class="nb">echo</span> <span class="s2">"Your birthday will be </span><span class="nv">$total_d</span><span class="s2"> later"</span>
+<span class="k">else
+</span><span class="nv">year</span><span class="o">=</span><span class="k">$((</span><span class="sb">`</span>date +%Y<span class="sb">`</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
+<span class="nv">total_d</span><span class="o">=</span><span class="k">$(($((</span><span class="sb">`</span>date --date<span class="o">=</span><span class="s2">"</span><span class="nv">$year$bir</span><span class="s2">"</span> +%s<span class="sb">`</span><span class="o">-</span><span class="sb">`</span>date +%s<span class="sb">`</span><span class="k">))</span><span class="o">/</span><span class="m">60</span><span class="o">/</span><span class="m">60</span><span class="o">/</span><span class="m">24</span><span class="k">))</span>
+<span class="nb">echo</span> <span class="s2">"Your birthday will be </span><span class="nv">$total_d</span><span class="s2"> later"</span>
+<span class="k">fi</span>
+</code></pre>
+</div>
+
+<p>以上程序用来计算还有几天可以过生日，但是不太能看得懂:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>total_d=$(($((`date --date="$year$bir" +%s`-`date +%s`))/60/60/24))
+</code></pre>
+</div>
+
+<h4 id="搜索解答">搜索解答：</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>%s : 从 1970 年 1 月 1 日 00:00:00 UTC 到目前为止的秒数
+</code></pre>
+</div>
+
+<p>那么该程序的思路就是求出两个日期之间相差的秒数，然后/60/60/24（/秒/分/时），即算出相差多少天。</p>
+
+<h3 id="q3">Q3.</h3>
+
+<p>练习问题：『A=B』且『B=C』，若我下达『unset $A』，则取消的变量是 A 还是 B？</p>
+
+<p>答案：被取消的是 B 喔，因为 unset $A 相当于 unset B 所以取消的是 B ，A 会继续存在！</p>
+
+<p>为何？</p>
+
+<p>解答：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[zhuangtingting@ ~]$ A=B
+[zhuangtingting@ ~]$ B=C
+[zhuangtingting@ ~]$ echo $A $B $C
+B C
+[zhuangtingting@ ~]$ unset $A
+[zhuangtingting@ ~]$ echo $A
+B
+[zhuangtingting@ ~]$ echo $B
+
+[zhuangtingting@ ~]$ unset A
+[zhuangtingting@ ~]$ echo $A
+
+[zhuangtingting@ ~]$
+</code></pre>
+</div>
+
+<p>正常情况下取消变量应该是<code class="highlighter-rouge">unset 变量名</code>，这里unset <code class="highlighter-rouge">$A</code>，<code class="highlighter-rouge">$A</code>也就是取用A，那么取消的自然是B咯。</p>
+
+
+</div>
+<div class="share">
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+  </div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/res/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+<div class="pagination">
+
+<a class="pagination-item newer" href="/2017/07/28/SecureCRT_sovle.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;关于SecureCRT问题的解决</a>
+
+
+<a class="pagination-item older" href="/2017/08/01/Linux_learn5.html">Linux学习小记5&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+<!-- 使用多说评论-->
+<style>#ds-reset .ds-avatar, #ds-reset .ds-avatar img{border-radius:50%;}</style>
+<script type="text/javascript">var duoshuoQuery = {short_name:"tingtinZ"};(function(){var ds = document.createElement('script');ds.type = 'text/javascript';ds.async = true;ds.src = '/res/js/embed.js';ds.charset = 'UTF-8';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>
+<div class="comments">
+  <div class="ds-thread" data-title="Linux学习小记4" data-thread-key="/2017/07/31/Linux_learn4" data-url="https://tingtinZ.github.io/2017/07/31/Linux_learn4.html"></div>
+</div> 
+
+<!-- 使用disqus评论-->
+
+  <div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = "https://tingtinZ.github.io/2017/07/31/Linux_learn4.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tingtinz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script id="dsq-count-scr" src="//zshmobi.disqus.com/count.js" async></script>
+  
+
+
+    
+    </div>
+  </div>    
+  <div id="top"><a id="rocket" href="javascript:;" title="返回顶部"><i></i></a></div>
+  
+</body>
+</html>

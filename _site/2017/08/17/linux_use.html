@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="Linux使用, 婷婷的博客, ">
+  <title>Linux使用 - 婷婷的博客</title>
+  <link rel="canonical" href="https://tingtinZ.github.io/2017/08/17/linux_use.html">
+  <link rel="icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/res/css/public.css">
+  <link rel="stylesheet" href="/res/css/light.css">
+  <script src="/res/js/light.js"></script>
+  <!-- <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script> -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88258580-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+  <div id="blog">
+    <div class="sidebar">
+  <div class="profilepic">
+    <a href="/"><img src="/res/img/me.jpg" alt="logo"></img></a>
+  </div>
+  <h1 class="title"><a href="/">婷婷的博客</a></h1>
+  <h2 class="sub-title"></h2>
+  <nav id="nav">
+    <ul>
+    
+      <li><a href="/page/timing.html"><i class="fa fa-clock-o"></i>&nbsp;时间轴</a></li>
+    
+      <li><a href="/page/category.html"><i class="fa fa-tags"></i>&nbsp;分类</a></li>
+    
+      <li><a href="/page/read.html"><i class="fa fa-book"></i>&nbsp;阅读</a></li>
+    
+      <li><a href="/page/about.html"><i class="fa fa-paper-plane-o"></i>&nbsp;关于</a></li>
+    
+    </ul>
+  </nav>  
+  <nav id="sub-nav">
+    <a class="weibo " href="" title="新浪微博" target="_blank"><i class="fa fa-weibo"></i></a>
+    <a class="github" href="https://github.com/tingtinZ" title="GitHub" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    <a class="rss" href="/page/feed.xml" title="RSS订阅" target="_blank"><i class="fa fa-rss"></i></a>
+    <a class="search" href="/page/search.html" title="搜索" target="_blank"><i class="fa fa-search"></i></a>
+  </nav>
+  <div id="license">
+    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="本站所有作品采用：&#10;知识共享《署名 非商业性使用 相同方式共享 3.0》&#10;进行许可" >
+    <img alt="License" height="31" width="88" src="data:image/png;base64,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" /></a>
+  </div>
+</div>
+
+    <div class="main">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2017/08/17/linux_use.html">Linux使用</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+    2017年08月17日
+    <i class="space"></i>
+    
+    <i class="fa fa-tags"></i>
+    <a class="post-category" href="/page/category.html#Linux">Linux</a>
+    
+    
+    <a class="post-category" href="/page/category.html#"></a>
+    
+  </p>
+</header>
+<div class="post-main">
+<p>今天看到虚拟机上ubuntu系统的磁盘不够用的时候，想要新建一个新的虚拟机并且分配更大的内存给它，结果把win上的c盘搞炸了，活生生100G的盘只剩下可怜的5G······重新放置软件和文件所在并安装新系统所需要的东西。</p>
+
+<!-- more -->
+
+<h3 id="virtualbox的vdi放置">virtualbox的vdi放置</h3>
+
+<p>以前的做法：把软件都安装在D盘，而虚拟机的文件等都放在了C盘。</p>
+
+<p>更正：将软件安装在C盘，将虚拟机的vdi移至C盘外的盘区。下载</p>
+
+<p>下面是在新安装的ubuntu上所作的一些配置和安装：</p>
+
+<h3 id="安装chrome">安装chrome</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*; sudo apt-get -f install
+</code></pre>
+</div>
+
+<h3 id="安装pycharm">安装pycharm</h3>
+
+<p>从官网下载了安装包后：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mv pycharm-community-2017.2.1.tar.gz /opt
+cd /opt &amp;&amp; tar -xf pycharm-community-2017.2.tar.gz
+sudo ln -s /opt/pycharm-community-2016.2/bin/pycharm.sh /usr/bin/pycharm
+</code></pre>
+</div>
+
+<p>（好吧，到了这一步，我已经后悔安装中文的ubuntu了······在命令行使用起来各种蛋疼······深深的体会到英文的会比中文的顺手这么多·····决定修改回英文······）</p>
+
+<h3 id="安装virtualenv">安装virtualenv</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pip install virtualenv
+</code></pre>
+</div>
+
+<p>使用：</p>
+
+<ul>
+  <li>
+    <p>为工程创建一个虚拟环境：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ virtualenv virt_proj
+</code></pre>
+    </div>
+
+    <p>此命令创建一个文件夹，包含了Python可执行文件， 以及 <code class="highlighter-rouge">pip</code> 库的一份拷贝。</p>
+
+    <p>可以选择使用一个Python解释器：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ virtualenv -p /usr/bin/python3 virt_proj
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>要开始使用虚拟环境，其需要被激活：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ source virt_proj/bin/activate
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>如果在虚拟环境中暂时完成了工作，则可以停用它：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ deactivate
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>注意：</p>
+
+<ul>
+  <li>
+    <p>运行带 <code class="highlighter-rouge">--no-site-packages</code> 选项的 <code class="highlighter-rouge">virtualenv</code> 将不会包括全局安装的包。</p>
+  </li>
+  <li>
+    <p>为了保持环境的一致性，可以选择“冷冻住（freeze）”环境：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ pip freeze &gt; requirements.txt
+</code></pre>
+    </div>
+
+    <p>可以使用 “pip list”在不产生requirements文件的情况下， 查看已安装包的列表。</p>
+
+    <p>在以后安装相同版本的相同包变得容易：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ pip install -r requirements.txt
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="安装virtualenvwrapper">安装virtualenvwrapper</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pip install virtualenvwrapper
+$ export WORKON_HOME=~/Envs  //WORKON_HOME 就是它将要用来存放各种虚拟环境目录的目录
+$ source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+</div>
+
+<p>最后一步发现，文件在/home/ztt/.local/bin/virtualenvwrapper.sh？？</p>
+
+<p>使用：</p>
+
+<ul>
+  <li>
+    <p>创建虚拟环境：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ mkvirtualenv virt_proj
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>在虚拟环境上工作：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ workon virt_proj
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>停止：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ deactivate
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>删除：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ rmvirtualenv virt_proj
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>列举所有的环境：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>~/pyproj_folder$ lsvirtualenv
+virt_proj
+=========
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cdvirtualenv</code>导航到当前激活的虚拟环境的目录中</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cdsitepackages</code>和上面的类似，但是是直接进入到 <code class="highlighter-rouge">site-packages</code> 目录中.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">lssitepackages</code>显示 <code class="highlighter-rouge">site-packages</code> 目录中的内容。</p>
+  </li>
+</ul>
+
+<h3 id="virtualenv-burrito">virtualenv-burrito</h3>
+
+<p>有了virtualenv-burrito，就能使用单行命令拥有virtualenv + virtualenvwrapper的环境。</p>
+
+<h2 id="autoenv">autoenv</h2>
+
+<p>当你 <code class="highlighter-rouge">cd</code> 进入一个包含 <code class="highlighter-rouge">.env</code> 的目录中，就会 <a href="https://github.com/kennethreitz/autoenv">autoenv</a> 自动激活那个环境。</p>
+
+<h3 id="学习中遇到的问题">学习中遇到的问题</h3>
+
+<ul>
+  <li>
+    <p>[x] 1. 关于<a href="http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html#virtualenvwrapper">virtualenv</a>的使用</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   "在任何你运行命令的目录中，这会创建Python的拷贝，并将之放在叫做 `my_project` 的文件中"?不太懂
+
+   【解惑】该虚拟环境是在python上做操作，使用了virtualenv可以与全局的python环境隔绝开，进入了虚拟环境，在任何运行命令的目录，都会生成python的拷贝，放在虚拟环境的目录下，而不影响全局python环境。
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>[x] 2. virtualenvwrapper和virtualenv？</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   【搜索了解】virtualenv` 的一个最大的缺点就是，每次开启虚拟环境之前要去虚拟环境所在目录下的 `bin` 目录下 `source` 一下 `activate`，这就需要我们记住每个虚拟环境所在的目录。
+
+   一种可行的解决方案是，将所有的虚拟环境目录全都集中起来，并对不同的虚拟环境使用不同的目录来管理。`virtualenvwrapper` 正是这样做的。并且，它还省去了每次开启虚拟环境时候的 `source` 操作，使得虚拟环境更加好用。
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>[x] 3. ubuntu改回英文，部分管理器侧栏中文却没有修改？</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   【解决】找到相应的文件管理器侧栏设置文件，发现并没有原来的信息，而是都被修改了，但是没有修改的中文还是停留在那里。所以尝试重启，发现重启后没有修改的中文都被修改成了英文。
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>[x] 4. 安装virtualenvwrapper并没有安装在/usr/local/bin/下面，而是在/home/ztt/.local/bin/里？</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   【措施】把`export WORKON_HOME=~/Envs`和`source ~/.local/bin/virtualenvwrapper.sh`写进`.bashrc`，避免要重新export。
+
+   ​
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p><a href="http://pythonguidecn.readthedocs.io/zh/latest/">Python最佳实践指南</a></p>
+</blockquote>
+
+</div>
+<div class="share">
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+  </div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/res/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+<div class="pagination">
+
+<a class="pagination-item newer" href="/2017/08/16/wordpress.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;建立wordpress博客</a>
+
+
+<a class="pagination-item older" href="/2017/08/18/Python_learn5.html">Python学习5&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+<!-- 使用多说评论-->
+<style>#ds-reset .ds-avatar, #ds-reset .ds-avatar img{border-radius:50%;}</style>
+<script type="text/javascript">var duoshuoQuery = {short_name:"tingtinZ"};(function(){var ds = document.createElement('script');ds.type = 'text/javascript';ds.async = true;ds.src = '/res/js/embed.js';ds.charset = 'UTF-8';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>
+<div class="comments">
+  <div class="ds-thread" data-title="Linux使用" data-thread-key="/2017/08/17/linux_use" data-url="https://tingtinZ.github.io/2017/08/17/linux_use.html"></div>
+</div> 
+
+<!-- 使用disqus评论-->
+
+  <div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = "https://tingtinZ.github.io/2017/08/17/linux_use.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tingtinz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script id="dsq-count-scr" src="//zshmobi.disqus.com/count.js" async></script>
+  
+
+
+    
+    </div>
+  </div>    
+  <div id="top"><a id="rocket" href="javascript:;" title="返回顶部"><i></i></a></div>
+  
+</body>
+</html>

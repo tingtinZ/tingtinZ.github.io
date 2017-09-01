@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="Linux学习小记5, 婷婷的博客, ">
+  <title>Linux学习小记5 - 婷婷的博客</title>
+  <link rel="canonical" href="https://tingtinZ.github.io/2017/08/01/Linux_learn5.html">
+  <link rel="icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/res/css/public.css">
+  <link rel="stylesheet" href="/res/css/light.css">
+  <script src="/res/js/light.js"></script>
+  <!-- <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script> -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88258580-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+  <div id="blog">
+    <div class="sidebar">
+  <div class="profilepic">
+    <a href="/"><img src="/res/img/me.jpg" alt="logo"></img></a>
+  </div>
+  <h1 class="title"><a href="/">婷婷的博客</a></h1>
+  <h2 class="sub-title"></h2>
+  <nav id="nav">
+    <ul>
+    
+      <li><a href="/page/timing.html"><i class="fa fa-clock-o"></i>&nbsp;时间轴</a></li>
+    
+      <li><a href="/page/category.html"><i class="fa fa-tags"></i>&nbsp;分类</a></li>
+    
+      <li><a href="/page/read.html"><i class="fa fa-book"></i>&nbsp;阅读</a></li>
+    
+      <li><a href="/page/about.html"><i class="fa fa-paper-plane-o"></i>&nbsp;关于</a></li>
+    
+    </ul>
+  </nav>  
+  <nav id="sub-nav">
+    <a class="weibo " href="" title="新浪微博" target="_blank"><i class="fa fa-weibo"></i></a>
+    <a class="github" href="https://github.com/tingtinZ" title="GitHub" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+    <a class="rss" href="/page/feed.xml" title="RSS订阅" target="_blank"><i class="fa fa-rss"></i></a>
+    <a class="search" href="/page/search.html" title="搜索" target="_blank"><i class="fa fa-search"></i></a>
+  </nav>
+  <div id="license">
+    <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" title="本站所有作品采用：&#10;知识共享《署名 非商业性使用 相同方式共享 3.0》&#10;进行许可" >
+    <img alt="License" height="31" width="88" src="data:image/png;base64,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" /></a>
+  </div>
+</div>
+
+    <div class="main">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2017/08/01/Linux_learn5.html">Linux学习小记5</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+    2017年08月01日
+    <i class="space"></i>
+    
+    <i class="fa fa-tags"></i>
+    <a class="post-category" href="/page/category.html#Linux">Linux</a>
+    
+    
+    <a class="post-category" href="/page/category.html#"></a>
+    
+  </p>
+</header>
+<div class="post-main">
+<p>今天到星期五，都将会学习《实战LINUX_SHELL编程与服务器管理》这本书，加强Linux知识的学习。</p>
+
+<!-- more -->
+
+<h2 id="知识点小记">知识点小记：</h2>
+
+<ol>
+  <li>
+    <p>使用openssh的登录法有三种：</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">ssh -l 账号 主机名或IP</code></li>
+      <li><code class="highlighter-rouge">ssh 账号@主机名或IP</code></li>
+      <li><code class="highlighter-rouge">ssh 主机名或IP</code>  （以目前系统中的账号为默认账号）</li>
+    </ul>
+  </li>
+  <li>
+    <p>权限rwx中x对目录来说不是执行的意思，而是可以进入该目录的权限。</p>
+  </li>
+  <li>
+    <p>[a-z_-]代表英文小写字母、下划线、以及-字符（由于-字符代表字符集合的范围，如果要把-也纳为集合的一份子，需要把-放置在集合的开头或结尾。</p>
+  </li>
+  <li>
+    <p>例如在<code class="highlighter-rouge">./my-work.sh &amp;</code> 中，&amp;表示把my-work.sh丢到后台去执行。</p>
+  </li>
+  <li>
+    <p>在/etc/passwd的第二栏原为密码栏，考虑系统安全，编码后的密码已被放入/etc/shadow文件中。</p>
+  </li>
+  <li>
+    <p>查看目前位于第几层shell <code class="highlighter-rouge">echo $HLVL</code></p>
+  </li>
+  <li>
+    <p>通常Linux/BSD系统，默认会开启7个终端界面。</p>
+  </li>
+  <li>
+    <ul>
+      <li>登录：bash先执行/etc/profile，再调用～/.bash_profile。</li>
+      <li>注销：bash调用~/.bash_logout。</li>
+      <li>执行新shell：执行终端程序或手动执行/bin/bash，或在编辑程序中调用Shell，会先调用/etc/bash.bashrc，再调用~/.bashrc。</li>
+      <li>执行Script：
+        <ul>
+          <li>使用#!/bin/bash：不调用.bash_profile、.bashrc，但会检查BASH_ENV的内容，如果为空，则执行它指定的启动文件。</li>
+          <li>使用#!/bin/sh：不调用任何启动文件，没有其他检查环境变量的操作。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">echo</code>默认会自动换行。若不想自动换行，加上<code class="highlighter-rouge">-n</code>选项。</p>
+
+    <p>之前看鸟哥那本圣经的时候，好像一直没有理解<code class="highlighter-rouge">-e</code>选项的作用，今天看了这本书，纠正自己的误解，这个选项可让字符串的特殊字符有作用。</p>
+  </li>
+  <li><code class="highlighter-rouge">:</code>（冒号）什么都不做，传回真值</li>
+</ol>
+
+<p>可以利用<code class="highlighter-rouge">:</code>建立一个空文件：<code class="highlighter-rouge">: &gt; ff.txt</code></p>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">fc -l</code>后面接数字可以查找指定编号范围的历史命令。还可以接命令的某几个字符来查找指定关键词之间的历史命令。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">read</code>读取一行数据放入数组中<code class="highlighter-rouge">read -a arr &lt; &lt;(echo 123 45 97 101 88)</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">eval</code>读取变量内容并执行。</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="有意思的命令及脚本">有意思的命令及脚本</h2>
+
+<ol>
+  <li>
+    <p>清空apache2 的日志文件</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#! /bin/bash</span>
+cp /dev/null /car/log/apache2/access.log
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>重定向输入和输出合用</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>sort &lt; unsort.txt &gt; sorted.txt
+</code></pre>
+    </div>
+
+    <p>sort会由unsort.txt读取数据，经过排序之后，将结果转向存储至sorted.txt。</p>
+
+    <p>刚开始一看到这行命令就会以为是没有排序过的就会重定向输出到新文件，但是仔细看了以后，才明白该命令之执行的顺序。</p>
+  </li>
+  <li>
+    <p>用cat命令和重定向输出来做简易的编辑：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ cat &gt; out.sh
+#! /bin/bash
+
+echo "Hello World!!!"
+</code></pre>
+    </div>
+
+    <p>编辑的内容就存储在out.sh中。</p>
+  </li>
+</ol>
+
+<h2 id="学习中遇到的问题">学习中遇到的问题</h2>
+
+<ol>
+  <li>
+    <p>书范例4-1-1</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ cat show_name.sh
+#!/bin/bash
+function show_name(){
+echo "今个儿是$1，你$2大大，来自$3”
+}
+name="$1"
+ip="10.0.0.164"
+today=`data +%F`
+
+if [ $# != 1 ];then
+echo "Usage: $0 [使用者名称]"
+exit
+fi
+
+show_name "$today" "$name" "$ip"
+sleep 5
+echo
+echo "Bye"
+
+$ sh show_name.sh zhuangtingting
+show_name.sh: 2: show_name.sh: Syntax error: "(" unexpected
+</code></pre>
+    </div>
+
+    <p>问题1：根据提示还是无法解决错误。</p>
+
+    <p>解答：“ 来自$3” ”中有引号错误。</p>
+
+    <p>问题2：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>if [ $# != 1 ];then
+echo "Usage: $0 [使用者名称]"
+exit
+fi
+</code></pre>
+    </div>
+
+    <p>这一段的所要实现的是？</p>
+
+    <p>解答：如果参数不是1个，说明执行该脚本时并没有按预想的“$0 [使用者名称]”这样的规则，则提示用户这样来执行脚本。</p>
+  </li>
+  <li>
+    <p>变量str=“Hello world”</p>
+
+    <p>printf”%q\n”“$str”</p>
+
+    <p>结果显示：”Hello\ world“</p>
+
+    <p>为何？不是很明白%q功能（将特殊字符用\转义？）</p>
+
+    <p>（这个知识点不是学习的重点，跳过）</p>
+  </li>
+</ol>
+
+</div>
+<div class="share">
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+  </div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["qzone","tsina","weixin","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/res/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+<div class="pagination">
+
+<a class="pagination-item newer" href="/2017/07/31/Linux_learn4.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Linux学习小记4</a>
+
+
+<a class="pagination-item older" href="/2017/08/02/Linux_learn6.html">Linux学习小记6&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+<!-- 使用多说评论-->
+<style>#ds-reset .ds-avatar, #ds-reset .ds-avatar img{border-radius:50%;}</style>
+<script type="text/javascript">var duoshuoQuery = {short_name:"tingtinZ"};(function(){var ds = document.createElement('script');ds.type = 'text/javascript';ds.async = true;ds.src = '/res/js/embed.js';ds.charset = 'UTF-8';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>
+<div class="comments">
+  <div class="ds-thread" data-title="Linux学习小记5" data-thread-key="/2017/08/01/Linux_learn5" data-url="https://tingtinZ.github.io/2017/08/01/Linux_learn5.html"></div>
+</div> 
+
+<!-- 使用disqus评论-->
+
+  <div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = "https://tingtinZ.github.io/2017/08/01/Linux_learn5.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://tingtinz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script id="dsq-count-scr" src="//zshmobi.disqus.com/count.js" async></script>
+  
+
+
+    
+    </div>
+  </div>    
+  <div id="top"><a id="rocket" href="javascript:;" title="返回顶部"><i></i></a></div>
+  
+</body>
+</html>

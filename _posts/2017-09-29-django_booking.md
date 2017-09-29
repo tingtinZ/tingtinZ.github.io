@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Django web项目：订餐（带部署）
+title: Django订餐项目（带部署）
 category: Django Python 
 descriptions:实现订餐及相关数据操作，用apache和mod_wsgi进行部署。
 keywords: Django 订餐 apache和mod_wsgi部署
@@ -8,7 +8,7 @@ keywords: Django 订餐 apache和mod_wsgi部署
 
 该订餐项目实现普通用户的订餐和查看菜单功能，以及超级用户对订单、菜单、餐馆的数据操作，后面还加入了数据的统计，用apache和mod_wsgi进行部署（顺便记录建立虚拟主机域名访问出现的问题集锦）。
 
-<>
+<!-- more --> 
 
 超级久没写过博客了，在这里交代一下这几天做的东西：`订餐`---》`聊天室`---》`订餐`
 

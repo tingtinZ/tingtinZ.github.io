@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django订餐项目（带部署）
-category: Django Python 
+category: Django 
 descriptions: 实现订餐及相关数据操作，用apache和mod_wsgi进行部署。
 keywords: Django 订餐 apache和mod_wsgi部署
 ---
